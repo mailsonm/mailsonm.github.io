@@ -1,0 +1,25 @@
+{
+  "project_name": "mailsonm.github.io",
+  "author": "Mailson Maia Alves",
+  "email": "59203034+mailsonm@users.noreply.github.com",
+  "repository": "https://github.com/mailsonm/mailsonm.github.io",
+  "live_url": "https://mailsonm.github.io/",
+  "tech_stack": {
+    "frontend": "HTML5, Vanilla CSS3 (CSS Variables, Flexbox/Grid), Vanilla JS (ES6+ Modules)",
+    "i18n": "Client-side JSON/Dictionary (PT-BR, EN, ES) with LocalStorage persistence",
+    "theme": "Dark / Light Mode toggle with prefers-color-scheme detection",
+    "contact": "Web3Forms async API + Direct Links (WhatsApp, LinkedIn, Email)",
+    "testing": "Vitest + JSDOM (Unit/Component) + Playwright (E2E/A11y)",
+    "ci_cd": "GitHub Actions -> GitHub Pages"
+  },
+  "testing": {
+    "unit_cmd": "npm run test",
+    "e2e_cmd": "npx playwright test",
+    "lint_cmd": "npm run lint"
+  },
+  "workflow": {
+    "tdd_enforced": true,
+    "multilingual_docs": true,
+    "git_author_enforced": true
+  }
+}
