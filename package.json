@@ -1,0 +1,20 @@
+{
+  "name": "mailsonm-github-io",
+  "version": "1.0.0",
+  "description": "Portfólio Profissional de Mailson Maia Alves no GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "audit": "npm audit"
+  },
+  "author": "Mailson Maia Alves <59203034+mailsonm@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "jsdom": "^30.0.1",
+    "vitest": "^4.1.11"
+  }
+}

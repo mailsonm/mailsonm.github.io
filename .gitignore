@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.nyc_output/
+.DS_Store
+Thumbs.db
+*.log
