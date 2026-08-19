@@ -3,21 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio Profissional de Mailson Maia Alves - Consultor de TI & Desenvolvedor Full Stack">
+  
+  <!-- Primary SEO Metadata -->
+  <title>Mailson Maia Alves | Consultor de TI & Desenvolvedor Full Stack</title>
+  <meta name="description" content="Portfólio Profissional de Mailson Maia Alves - Consultor de TI & Dev Full Stack especialista em Odoo 19, Python, PHP 8.3/WordPress, automações n8n e TDD-First.">
   <meta name="author" content="Mailson Maia Alves">
-  <title>Mailson Maia Alves | Consultor de TI & Dev Full Stack</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mailsonm.github.io/">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mailsonm.github.io/">
+  <meta property="og:title" content="Mailson Maia Alves | Consultor de TI & Dev Full Stack">
+  <meta property="og:description" content="Portfólio Profissional: Soluções corporativas, módulos ERP Odoo 19, plugins WordPress, automações n8n e engenharia de software com TDD.">
+  <meta property="og:image" content="https://mailsonm.github.io/assets/img/profile.webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mailsonm.github.io/">
+  <meta name="twitter:title" content="Mailson Maia Alves | Consultor de TI & Dev Full Stack">
+  <meta name="twitter:description" content="Portfólio Profissional: Soluções corporativas, módulos ERP Odoo 19, plugins WordPress, automações n8n e TDD.">
+  <meta name="twitter:image" content="https://mailsonm.github.io/assets/img/profile.webp">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Skip Link for Accessibility (A11y) -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Header & Navigation -->
   <header id="header" class="site-header">
     <nav class="nav-container" aria-label="Navegação Principal">
       <a href="#hero" class="brand-logo" data-i18n="brand.name">Mailson Maia</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Especialidades</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projetos</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+
       <div class="nav-actions">
-        <button id="theme-toggle" class="btn-icon" aria-label="Alternar tema escuro/claro" title="Alternar tema">
+        <button id="theme-toggle" class="btn-icon" aria-label="Alternar tema claro/escuro" data-i18n-aria="nav.theme_aria" title="Alternar tema">
           <span class="icon-theme" aria-hidden="true">🌓</span>
         </button>
-        <select id="lang-select" class="select-lang" aria-label="Selecionar Idioma">
-          <option value="pt-BR" selected>PT-BR</option>
+        <select id="lang-select" class="select-lang" aria-label="Selecionar idioma" data-i18n-aria="nav.lang_aria">
+          <option value="pt-BR">PT-BR</option>
           <option value="en-US">EN-US</option>
           <option value="es-ES">ES-ES</option>
         </select>
@@ -25,21 +61,227 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main id="main-content">
+    
+    <!-- 1. Hero Section -->
     <section id="hero" class="hero-section">
-      <div class="container">
-        <h1 data-i18n="hero.title">Mailson Maia Alves</h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Consultor de TI & Desenvolvedor Full Stack</p>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-greeting" data-i18n="hero.greeting">Olá, me chamo</span>
+          <h1 class="hero-title" data-i18n="hero.title">Mailson Maia Alves</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Consultor de TI & Desenvolvedor Full Stack</p>
+          <p class="hero-desc" data-i18n="hero.description">
+            Especialista em arquiteturas escaláveis, ERP Odoo 19 / Python, ecossistema PHP/WordPress, automações com n8n e desenvolvimento orientado a testes (TDD-First).
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero.btn_projects">Ver Projetos</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn_contact">Entrar em Contato</a>
+            <a href="https://github.com/mailsonm" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.btn_resume">GitHub Profile</a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="about.title">Sobre Mim & Metodologia</h2>
+          <p class="section-subtitle" data-i18n="about.subtitle">Engenharia de Software com Disciplina e Resultados</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <p data-i18n="about.p1">
+              Com sólida experiência em Consultoria de TI e Desenvolvimento Full Stack, atuo na construção de soluções empresariais robustas, integrações de sistemas complexos e desenvolvimento de plugins e automações de alta produtividade.
+            </p>
+          </div>
+          <div class="about-card highlight">
+            <p data-i18n="about.p2">
+              Sigo a metodologia Akita Way (Anti-Vibe Engineering) e TDD-First rigoroso: se uma funcionalidade não possui testes automatizados, ela não existe. Foco em Clean Code, SOLID, manutenibilidade e performance extrema.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Skills Matrix Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="skills.title">Matriz de Especialidades</h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologias e Ferramentas Dominadas</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🐘</div>
+            <h3 class="skill-title" data-i18n="skills.backend_title">Backend & ERP</h3>
+            <p class="skill-desc" data-i18n="skills.backend_desc">
+              PHP 8.3+ (PSR-12, Pest), Python 3.12, Odoo 19 (Módulos & Testes), WordPress Plugin Dev, REST APIs.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3 class="skill-title" data-i18n="skills.frontend_title">Frontend & UI</h3>
+            <p class="skill-desc" data-i18n="skills.frontend_desc">
+              JavaScript Moderno (ES6+), TypeScript, Vue.js / OWL Framework, HTML5 Semântico, CSS3 Moderno.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🔄</div>
+            <h3 class="skill-title" data-i18n="skills.devops_title">DevOps & Automações</h3>
+            <p class="skill-desc" data-i18n="skills.devops_desc">
+              Docker & Docker Compose, n8n.io, PowerShell, Linux CLI, Git & GitHub Actions CI/CD.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🎮</div>
+            <h3 class="skill-title" data-i18n="skills.gamedev_title">Game Development</h3>
+            <p class="skill-desc" data-i18n="skills.gamedev_desc">
+              Godot Engine (GDScript / C#), Arquitetura por Sinais e Composição, Testes com GUT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Projects Showcase Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="projects.title">Projetos em Destaque</h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">Soluções Reais, Código Aberto e Alta Performance</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="projects-filters" role="group" aria-label="Filtro de Projetos">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true" data-i18n="projects.filter_all">Todos</button>
+          <button class="filter-btn" data-filter="wordpress" aria-pressed="false" data-i18n="projects.filter_wordpress">WordPress</button>
+          <button class="filter-btn" data-filter="odoo" aria-pressed="false" data-i18n="projects.filter_odoo">Odoo & Python</button>
+          <button class="filter-btn" data-filter="automation" aria-pressed="false" data-i18n="projects.filter_automation">Automação & n8n</button>
+          <button class="filter-btn" data-filter="php" aria-pressed="false" data-i18n="projects.filter_php">PHP & APIs</button>
+          <button class="filter-btn" data-filter="games" aria-pressed="false" data-i18n="projects.filter_games">Game Dev</button>
+        </div>
+
+        <!-- Dynamic Grid injected by assets/js/projects.js -->
+        <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 5. Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="services.title">Serviços & Consultoria</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">Como posso agregar valor ao seu projeto ou empresa</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="services.s1_title">Consultoria de TI & Arquitetura</h3>
+            <p class="service-desc" data-i18n="services.s1_desc">
+              Diagnóstico técnico, planejamento arquitetural, estruturação de microsserviços e definição de padrões de engenharia.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="services.s2_title">Desenvolvimento Odoo 19 & Python</h3>
+            <p class="service-desc" data-i18n="services.s2_desc">
+              Criação de módulos sob medida, customizações avançadas de regras de negócio, integrações via API e testes automatizados.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="services.s3_title">Plugins WordPress & Backend PHP</h3>
+            <p class="service-desc" data-i18n="services.s3_desc">
+              Desenvolvimento de plugins profissionais de alta performance, compatíveis com WordPress VIP e padrões PSR-12.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="services.s4_title">Automações n8n & Pipelines CI/CD</h3>
+            <p class="service-desc" data-i18n="services.s4_desc">
+              Criação de fluxos inteligentes de dados no n8n.io, scripts de automação CLI/PowerShell e pipelines no GitHub Actions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="contact.title">Vamos Conversar?</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">Disponível para consultorias, novos projetos e oportunidades</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Reach-Out Channels -->
+          <div class="contact-direct">
+            <h3 class="contact-subtitle" data-i18n="contact.direct_title">Canais Rápidos de Contato</h3>
+            <p class="contact-direct-desc">Entre em contato direto pelos canais abaixo para respostas rápidas:</p>
+            
+            <div class="direct-channels">
+              <a href="https://wa.me/5588999999999" target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-whatsapp">
+                <span class="btn-icon-symbol">💬</span>
+                <span data-i18n="contact.whatsapp_btn">Falar no WhatsApp</span>
+              </a>
+              <a href="https://www.linkedin.com/in/mailsonm" target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-linkedin">
+                <span class="btn-icon-symbol">💼</span>
+                <span data-i18n="contact.linkedin_btn">Conectar no LinkedIn</span>
+              </a>
+              <a href="mailto:59203034+mailsonm@users.noreply.github.com" class="btn btn-direct btn-email">
+                <span class="btn-icon-symbol">✉️</span>
+                <span data-i18n="contact.email_btn">Enviar E-mail Direto</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Async Web3Forms Contact Form -->
+          <div class="contact-form-container">
+            <h3 class="contact-subtitle" data-i18n="contact.form_title">Envie uma Mensagem</h3>
+            
+            <form id="contact-form" class="contact-form" novalidate>
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-group">
+                <label for="contact-name" class="form-label" data-i18n="contact.name_label">Seu Nome</label>
+                <input type="text" id="contact-name" name="name" class="form-input" required data-i18n-placeholder="contact.placeholder_name" placeholder="Ex: João Silva">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label" data-i18n="contact.email_label">Seu E-mail</label>
+                <input type="email" id="contact-email" name="email" class="form-input" required data-i18n-placeholder="contact.placeholder_email" placeholder="Ex: joao@empresa.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label" data-i18n="contact.message_label">Sua Mensagem</label>
+                <textarea id="contact-message" name="message" class="form-textarea" rows="5" required data-i18n-placeholder="contact.placeholder_message" placeholder="Descreva brevemente sua necessidade ou projeto..."></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-contact" class="btn btn-primary btn-block" data-i18n="contact.btn_send">
+                Enviar Mensagem
+              </button>
+
+              <div id="contact-status" class="status-msg hidden" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="current-year">2026</span> Mailson Maia Alves. Open Source no GitHub Pages.</p>
+    <div class="container footer-container">
+      <p>&copy; <span id="current-year">2026</span> Mailson Maia Alves. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+      <p class="footer-tech" data-i18n="footer.tech_note">Hospedado no GitHub Pages com Vanilla JS, CSS3 e HTML5 Semântico.</p>
     </div>
   </footer>
 
+  <!-- Application Entrypoint -->
   <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
