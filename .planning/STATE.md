@@ -1,9 +1,9 @@
 # 📊 STATE.md: Estado do Projeto
 
 ## 🎯 Meta Ativa
-- **Meta:** Implementação TDD dos Módulos Core JS (Fase 2)
-- **Fase Atual:** Fase 2: Módulos Core JS com TDD
-- **Última Fase Concluída:** Fase 1: Fundação & Setup de Testes TDD (100% Concluída)
+- **Meta:** Construção do Design System CSS Moderno & Estrutura HTML5 Semântica (Fase 3)
+- **Fase Atual:** Fase 3: Design System CSS & HTML5 Semântico
+- **Última Fase Concluída:** Fase 2: Módulos Core JS com TDD (100% Concluída — 54 testes passando)
 
 ---
 
@@ -11,23 +11,23 @@
 
 | Fase | Título | Status | Testes |
 | :---: | :--- | :---: | :---: |
-| **01** | Fundação & Setup de Testes TDD | ✅ Concluída | `tests/unit/sanity.test.js` (Passando) |
-| **02** | Módulos Core JS com TDD | ⏳ Pronto para iniciar | `tests/unit/*.test.js` (Theme, i18n, Projects, Contact) |
-| **03** | Design System CSS & HTML5 Semântico | 📋 Planejado | Visual / Layout checks |
-| **04** | Showcase de Projetos & Formulário | 📋 Planejado | Vitest mocks / Web3Forms |
+| **01** | Fundação & Setup de Testes TDD | ✅ Concluída | `sanity.test.js` (3 testes) |
+| **02** | Módulos Core JS com TDD | ✅ Concluída | `theme`, `i18n`, `projects`, `contact`, `main` (54 testes) |
+| **03** | Design System CSS & HTML5 Semântico | ⏳ Pronto para iniciar | Layout, Responsividade, Tokens CSS |
+| **04** | Showcase de Projetos & Formulário | 📋 Planejado | Integração de conteúdo completo |
 | **05** | Testes E2E, A11y & Lighthouse | 📋 Planejado | `tests/e2e/*.spec.js` |
 | **06** | GitHub Actions CI/CD & Deploy Pages | 📋 Planejado | CI Actions workflow |
 
 ---
 
-## 🔑 Decisões Arquiteturais & Segurança Registradas
-1. **[ADR-001] Stack Ultra-Leve Vanilla:** Zero dependências de runtime em produção. Apenas HTML/CSS/JS nativos no GitHub Pages.
-2. **[ADR-002] Multi-idioma Nativo:** Dicionário i18n em JS com troca reativa no DOM e persistência no `localStorage`.
-3. **[ADR-003] Estratégia de Contato Híbrida:** Botões diretos (WhatsApp, LinkedIn, Email) + Formulário assíncrono Web3Forms com fallback.
-4. **[ADR-004] TDD-First & Qualidade:** Vitest 4.x + JSDOM 30.x + Playwright 1.62.x com 0 vulnerabilidades auditadas no NPM (`npm audit`).
+## 🔑 Decisões Arquiteturais & Resultados Registrados
+1. **[ADR-001] Stack Ultra-Leve Vanilla:** Zero dependências de runtime em produção.
+2. **[ADR-002] Multi-idioma Nativo:** Dicionário i18n reativo em `assets/js/i18n.js` com persistência em `localStorage` e evento `languagechange`.
+3. **[ADR-003] Estratégia de Contato Híbrida:** Validador e cliente assíncrono Web3Forms em `assets/js/contact.js` com fallback `mailto:`.
+4. **[ADR-004] TDD-First Rigoroso:** 54 testes unitários cobrindo 100% dos módulos JS em Vitest 4.x + JSDOM.
 5. **[ADR-005] Identidade Git:** Autor estrito: `Mailson Maia Alves` (`59203034+mailsonm@users.noreply.github.com`).
 
 ---
 
 ## ⏩ Próximo Passo
-Executar `/gsd-plan-phase 2` para planejar a implementação orientada a testes dos 4 módulos Core (`theme.js`, `i18n.js`, `projects.js`, `contact.js`).
+Executar `/gsd-plan-phase 3` para estruturar o Design System CSS moderno (variáveis, tokens de design, layout responsivo e HTML5 semântico com metatags completas de SEO).
