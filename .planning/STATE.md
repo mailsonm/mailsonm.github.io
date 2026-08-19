@@ -1,9 +1,9 @@
 # 📊 STATE.md: Estado do Projeto
 
 ## 🎯 Meta Ativa
-- **Meta:** Inicialização e Estruturação do Portfólio `mailsonm.github.io`
-- **Fase Atual:** Fase 1: Fundação & Setup de Testes TDD (Pronto para Iniciar)
-- **Status Geral:** Projeto inicializado com sucesso via GSD (`/gsd-new-project`)
+- **Meta:** Implementação TDD dos Módulos Core JS (Fase 2)
+- **Fase Atual:** Fase 2: Módulos Core JS com TDD
+- **Última Fase Concluída:** Fase 1: Fundação & Setup de Testes TDD (100% Concluída)
 
 ---
 
@@ -11,8 +11,8 @@
 
 | Fase | Título | Status | Testes |
 | :---: | :--- | :---: | :---: |
-| **01** | Fundação & Setup de Testes TDD | ⏳ Pronto para iniciar | Vitest / Playwright setup |
-| **02** | Módulos Core JS com TDD | 📋 Planejado | `tests/unit/*.test.js` |
+| **01** | Fundação & Setup de Testes TDD | ✅ Concluída | `tests/unit/sanity.test.js` (Passando) |
+| **02** | Módulos Core JS com TDD | ⏳ Pronto para iniciar | `tests/unit/*.test.js` (Theme, i18n, Projects, Contact) |
 | **03** | Design System CSS & HTML5 Semântico | 📋 Planejado | Visual / Layout checks |
 | **04** | Showcase de Projetos & Formulário | 📋 Planejado | Vitest mocks / Web3Forms |
 | **05** | Testes E2E, A11y & Lighthouse | 📋 Planejado | `tests/e2e/*.spec.js` |
@@ -20,14 +20,14 @@
 
 ---
 
-## 🔑 Decisões Arquiteturais Registradas (ADR)
-1. **[ADR-001] Stack Ultra-Leve Vanilla:** HTML5 + Vanilla CSS3 + Vanilla JS (ES6+ Modules) sem dependência de frameworks volumosos para atingir nota 100 no Lighthouse e carregamento instantâneo.
-2. **[ADR-002] Multi-idioma Nativo:** Dicionário i18n em JS com troca reativa no DOM sem recarregar a página e persistência no `localStorage`.
-3. **[ADR-003] Estratégia de Contato Híbrida:** Botões diretos para canais de alta conversão (WhatsApp, LinkedIn, Email) + Formulário assíncrono Web3Forms com fallback transparente para `mailto:`.
-4. **[ADR-004] TDD-First & Qualidade:** Vitest + JSDOM para testes de unidade dos módulos JS e Playwright para validação E2E e Acessibilidade.
+## 🔑 Decisões Arquiteturais & Segurança Registradas
+1. **[ADR-001] Stack Ultra-Leve Vanilla:** Zero dependências de runtime em produção. Apenas HTML/CSS/JS nativos no GitHub Pages.
+2. **[ADR-002] Multi-idioma Nativo:** Dicionário i18n em JS com troca reativa no DOM e persistência no `localStorage`.
+3. **[ADR-003] Estratégia de Contato Híbrida:** Botões diretos (WhatsApp, LinkedIn, Email) + Formulário assíncrono Web3Forms com fallback.
+4. **[ADR-004] TDD-First & Qualidade:** Vitest 4.x + JSDOM 30.x + Playwright 1.62.x com 0 vulnerabilidades auditadas no NPM (`npm audit`).
 5. **[ADR-005] Identidade Git:** Autor estrito: `Mailson Maia Alves` (`59203034+mailsonm@users.noreply.github.com`).
 
 ---
 
 ## ⏩ Próximo Passo
-Executar `/gsd-plan-phase 1` para criar o plano detalhado de execução da **Fase 1: Fundação & Setup de Testes TDD**.
+Executar `/gsd-plan-phase 2` para planejar a implementação orientada a testes dos 4 módulos Core (`theme.js`, `i18n.js`, `projects.js`, `contact.js`).
