@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111c34" />
+      <stop offset="100%" stop-color="#0b1120" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Outer Background -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="4"/>
+
+  <!-- Subtle Tech Grid Background Pattern inside avatar -->
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#243560" stroke-dasharray="4 6" stroke-width="1.5"/>
+
+  <!-- Stylized Developer Silhouette -->
+  <!-- Shoulders / Torso -->
+  <path d="M 40 185 C 40 145, 65 135, 100 135 C 135 135, 160 145, 160 185 Z" fill="url(#suitGrad)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Collar / Shirt Detail -->
+  <polygon points="100,135 88,155 100,165 112,155" fill="#f8fafc"/>
+  <polygon points="100,148 95,178 105,178" fill="url(#accentGrad)"/>
+
+  <!-- Neck -->
+  <rect x="88" y="112" width="24" height="26" rx="4" fill="#f1f5f9"/>
+
+  <!-- Head / Face -->
+  <ellipse cx="100" cy="85" rx="36" ry="42" fill="#f8fafc"/>
+
+  <!-- Modern Hair Style -->
+  <path d="M 64 82 C 62 55, 78 42, 100 42 C 122 42, 138 55, 136 82 C 130 68, 120 62, 100 62 C 80 62, 70 68, 64 82 Z" fill="#0f172a"/>
+
+  <!-- Modern Tech Glasses -->
+  <rect x="72" y="76" width="22" height="15" rx="3" fill="none" stroke="url(#accentGrad)" stroke-width="2.5"/>
+  <rect x="106" y="76" width="22" height="15" rx="3" fill="none" stroke="url(#accentGrad)" stroke-width="2.5"/>
+  <line x1="94" y1="83" x2="106" y2="83" stroke="url(#accentGrad)" stroke-width="2.5"/>
+  <!-- Glasses reflection -->
+  <line x1="75" y1="78" x2="82" y2="88" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="109" y1="78" x2="116" y2="88" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Beard & Smile -->
+  <path d="M 85 95 C 92 104, 108 104, 115 95 C 112 110, 88 110, 85 95 Z" fill="#1e293b"/>
+  <path d="M 94 94 Q 100 98 106 94" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Tech Indicator Badge -->
+  <circle cx="152" cy="152" r="14" fill="#0b1120" stroke="url(#accentGrad)" stroke-width="2"/>
+  <text x="152" y="156" font-family="monospace" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+</svg>

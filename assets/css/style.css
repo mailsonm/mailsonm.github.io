@@ -326,6 +326,27 @@ body {
   text-align: center;
 }
 
+.hero-avatar {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.avatar-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow), var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.avatar-img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
 .hero-greeting {
   font-family: var(--font-mono);
   color: var(--accent);
