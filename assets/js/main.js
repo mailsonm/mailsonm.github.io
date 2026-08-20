@@ -1,12 +1,13 @@
 /**
  * Main Application Entrypoint
- * Initializes Theme, i18n, Projects Showcase and Contact Form modules.
+ * Initializes Theme, i18n, Projects Showcase, Contact Form and Animations modules.
  */
 
 import { initTheme } from './theme.js';
 import { initI18n } from './i18n.js';
 import { initProjectsFilter } from './projects.js';
 import { initContactForm } from './contact.js';
+import { initAnimations } from './animations.js';
 
 export function initApp() {
   // 1. Initialize Theme (Dark/Light Mode)
@@ -21,7 +22,10 @@ export function initApp() {
   // 4. Initialize Contact Form & Validations
   initContactForm();
 
-  // 5. Update Dynamic Current Year in Footer
+  // 5. Initialize Particles, Scroll Reveal & Interactive Animations
+  initAnimations();
+
+  // 6. Update Dynamic Current Year in Footer
   if (typeof document !== 'undefined') {
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
