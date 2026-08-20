@@ -766,6 +766,14 @@ body {
   border: 1px solid var(--error);
 }
 
+.form-privacy-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
 /* --------------------------------------------------------------------------
    11. Footer
    -------------------------------------------------------------------------- */

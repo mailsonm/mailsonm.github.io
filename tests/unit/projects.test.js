@@ -4,7 +4,8 @@ import {
   filterProjects,
   createProjectCard,
   renderProjects,
-  initProjectsFilter
+  initProjectsFilter,
+  sanitizeUrl
 } from '../../assets/js/projects.js';
 
 describe('Projects Filter & Showcase Manager Module', () => {
@@ -60,6 +61,22 @@ describe('Projects Filter & Showcase Manager Module', () => {
     it('should return empty array for non-existent category', () => {
       const result = filterProjects('non-existent');
       expect(result).toEqual([]);
+    });
+  });
+
+  describe('sanitizeUrl Defensive Hardening', () => {
+    it('should accept valid https:// and http:// URLs', () => {
+      expect(sanitizeUrl('https://github.com/mailsonm')).toBe('https://github.com/mailsonm');
+      expect(sanitizeUrl('http://example.com/demo')).toBe('http://example.com/demo');
+    });
+
+    it('should reject dangerous schemas like javascript:, data:, vbscript:', () => {
+      expect(sanitizeUrl('javascript:alert(1)')).toBeNull();
+      expect(sanitizeUrl('data:text/html,<script>alert(1)</script>')).toBeNull();
+      expect(sanitizeUrl('vbscript:msgbox(1)')).toBeNull();
+      expect(sanitizeUrl('')).toBeNull();
+      expect(sanitizeUrl(null)).toBeNull();
+      expect(sanitizeUrl(undefined)).toBeNull();
     });
   });
 

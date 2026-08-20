@@ -111,7 +111,21 @@ export function filterProjects(category = 'all') {
 }
 
 /**
- * Creates an article element representing a project card.
+ * Sanitiza URLs externas contra esquemas perigosos (ex: javascript:, data:, vbscript:)
+ * @param {string|null} url
+ * @returns {string|null}
+ */
+export function sanitizeUrl(url) {
+  if (!url || typeof url !== 'string') return null;
+  const trimmed = url.trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  return null;
+}
+
+/**
+ * Creates an accessible, interactive project card element with tags and external links.
  * @param {object} project
  * @param {string} lang
  * @returns {HTMLElement}
@@ -132,13 +146,19 @@ export function createProjectCard(project, lang = getEffectiveLanguage()) {
   const btnDocsText = translate('projects.btn_docs', lang) || 'Docs';
   const btnLiveText = translate('projects.btn_live', lang) || 'Live Demo';
 
-  let linksHtml = `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">${btnCodeText}</a>`;
+  const safeGithub = sanitizeUrl(project.githubUrl);
+  const safeDocs = sanitizeUrl(project.docsUrl);
+  const safeLive = sanitizeUrl(project.liveUrl);
+
+  let linksHtml = safeGithub 
+    ? `<a href="${safeGithub}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">${btnCodeText}</a>`
+    : '';
   
-  if (project.docsUrl) {
-    linksHtml += `<a href="${project.docsUrl}" target="_blank" rel="noopener noreferrer" class="btn-project btn-docs">${btnDocsText}</a>`;
+  if (safeDocs) {
+    linksHtml += `<a href="${safeDocs}" target="_blank" rel="noopener noreferrer" class="btn-project btn-docs">${btnDocsText}</a>`;
   }
-  if (project.liveUrl) {
-    linksHtml += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">${btnLiveText}</a>`;
+  if (safeLive) {
+    linksHtml += `<a href="${safeLive}" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">${btnLiveText}</a>`;
   }
 
   article.innerHTML = `

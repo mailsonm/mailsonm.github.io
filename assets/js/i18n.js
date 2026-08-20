@@ -91,6 +91,8 @@ export const translations = {
       btn_sending: 'Enviando...',
       success_msg: 'Mensagem enviada com sucesso! Retornarei o mais breve possível.',
       error_msg: 'Não foi possível enviar a mensagem no momento. Por favor, utilize o WhatsApp ou e-mail direto.',
+      rate_limit_msg: 'Por favor, aguarde 60 segundos antes de enviar outra mensagem.',
+      privacy_note: '🔒 Seus dados serão utilizados unicamente para retorno do seu contato profissional.',
       whatsapp_btn: 'Falar no WhatsApp',
       linkedin_btn: 'Conectar no LinkedIn',
       email_btn: 'Enviar E-mail Direto'
@@ -183,6 +185,8 @@ export const translations = {
       btn_sending: 'Sending...',
       success_msg: 'Message sent successfully! I will reply as soon as possible.',
       error_msg: 'Unable to send message right now. Please reach out directly via WhatsApp or Email.',
+      rate_limit_msg: 'Please wait 60 seconds before sending another message.',
+      privacy_note: '🔒 Your information will be used solely to reply to your inquiry.',
       whatsapp_btn: 'Message on WhatsApp',
       linkedin_btn: 'Connect on LinkedIn',
       email_btn: 'Send Direct Email'
@@ -275,6 +279,8 @@ export const translations = {
       btn_sending: 'Enviando...',
       success_msg: '¡Mensaje enviado con éxito! Responderé a la brevedad posible.',
       error_msg: 'No fue posible enviar el mensaje en este momento. Por favor, comuníquese por WhatsApp o correo directo.',
+      rate_limit_msg: 'Por favor, espere 60 segundos antes de enviar otro mensaje.',
+      privacy_note: '🔒 Sus datos se utilizarán únicamente para responder a su consulta profesional.',
       whatsapp_btn: 'Hablar por WhatsApp',
       linkedin_btn: 'Conectar en LinkedIn',
       email_btn: 'Enviar Correo Directo'

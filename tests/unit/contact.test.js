@@ -13,6 +13,7 @@ import {
 describe('Contact Form Manager Module', () => {
   beforeEach(() => {
     document.body.innerHTML = '';
+    sessionStorage.clear();
     vi.restoreAllMocks();
   });
 
@@ -132,8 +133,8 @@ describe('Contact Form Manager Module', () => {
     });
   });
 
-  describe('initContactForm DOM Integration', () => {
-    it('should handle form submit, show loading state, and render success message', async () => {
+  describe('initContactForm DOM Integration & Security', () => {
+    it('should handle legitimate form submit and show success', async () => {
       global.fetch = vi.fn().mockResolvedValue({
         ok: true,
         json: async () => ({ success: true })
@@ -141,10 +142,10 @@ describe('Contact Form Manager Module', () => {
 
       document.body.innerHTML = `
         <form id="contact-form">
-          <input type="hidden" name="access_key" value="test-key" />
+          <input type="checkbox" name="botcheck" />
           <input id="contact-name" name="name" value="Mailson Dev" />
           <input id="contact-email" name="email" value="dev@mailson.com" />
-          <textarea id="contact-message" name="message">Mensagem de teste válida para envio.</textarea>
+          <textarea id="contact-message" name="message">Mensagem válida para contato.</textarea>
           <button type="submit" id="btn-submit-contact">Enviar</button>
           <div id="contact-status" class="hidden"></div>
         </form>
@@ -153,15 +154,51 @@ describe('Contact Form Manager Module', () => {
       initContactForm();
 
       const form = document.getElementById('contact-form');
-      const submitBtn = document.getElementById('btn-submit-contact');
       const statusDiv = document.getElementById('contact-status');
 
       form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
 
-      // Wait microtasks
       await new Promise(process.nextTick);
 
       expect(global.fetch).toHaveBeenCalled();
+      expect(statusDiv.classList.contains('success')).toBe(true);
+    });
+
+    it('should reject inputs exceeding max length thresholds', () => {
+      const longName = 'A'.repeat(101);
+      const longEmail = 'a'.repeat(121) + '@example.com';
+      const longMessage = 'M'.repeat(3001);
+
+      expect(validateName(longName)).toBe(false);
+      expect(validateEmail(longEmail)).toBe(false);
+      expect(validateMessage(longMessage)).toBe(false);
+    });
+
+    it('should silently intercept honeypot bot submissions without calling API', async () => {
+      const fetchSpy = vi.fn();
+      global.fetch = fetchSpy;
+
+      document.body.innerHTML = `
+        <form id="contact-form">
+          <input type="checkbox" name="botcheck" checked />
+          <input id="contact-name" name="name" value="Bot Name" />
+          <input id="contact-email" name="email" value="bot@spam.com" />
+          <textarea id="contact-message" name="message">Spam automated message content</textarea>
+          <button type="submit" id="btn-submit-contact">Enviar</button>
+          <div id="contact-status" class="hidden"></div>
+        </form>
+      `;
+
+      initContactForm();
+
+      const form = document.getElementById('contact-form');
+      const statusDiv = document.getElementById('contact-status');
+
+      form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+      await new Promise(process.nextTick);
+
+      expect(fetchSpy).not.toHaveBeenCalled();
       expect(statusDiv.classList.contains('success')).toBe(true);
     });
   });
