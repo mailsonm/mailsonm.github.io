@@ -1,18 +1,16 @@
-# 🌐 Mailson Maia Alves — Professional Portfolio (`mailsonm.github.io`)
+# 🌐 Portfólio Pessoal — Mailson Maia Alves
 
-[![CI - Continuous Integration](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/ci.yml)
-[![Deploy to GitHub Pages](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/deploy.yml)
+[![CI](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/ci.yml)
+[![Deploy](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mailsonm/mailsonm.github.io/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![TDD: Vitest + Playwright](https://img.shields.io/badge/TDD-100%25%20Passed-10b981.svg)](https://github.com/mailsonm/mailsonm.github.io)
-[![Lighthouse: 100/100](https://img.shields.io/badge/Lighthouse-100%2F100-38bdf8.svg)](https://pagespeed.web.dev/)
 
-> **Live Demo:** [https://mailsonm.github.io/](https://mailsonm.github.io/)  
-> **Developer:** Mailson Maia Alves (IT Consultant & Senior Full Stack Developer)  
-> **Contact:** `59203034+mailsonm@users.noreply.github.com` | [LinkedIn](https://www.linkedin.com/in/mailsonm) | [GitHub](https://github.com/mailsonm)
+> **Deploy ao vivo:** [https://mailsonm.github.io/](https://mailsonm.github.io/)  
+> **Autor:** Mailson Maia Alves (Consultor de TI & Desenvolvedor Full Stack)  
+> **Contato:** `59203034+mailsonm@users.noreply.github.com` | [LinkedIn](https://www.linkedin.com/in/mailsonm) | [GitHub](https://github.com/mailsonm)
 
 ---
 
-## 🌐 Language Navigation / Navegação de Idioma / Navegación de Idioma
+## 🌐 Idiomas / Languages / Idiomas
 - [🇧🇷 Português (PT-BR)](#-português-pt-br)
 - [🇺🇸 English (EN)](#-english-en)
 - [🇪🇸 Español (ES)](#-español-es)
@@ -21,120 +19,105 @@
 
 # 🇧🇷 Português (PT-BR)
 
-## 📌 1. Visão Geral
-Portfólio web profissional de altíssima performance, moderno e responsivo, construído como o hub central da presença digital de **Mailson Maia Alves (Consultor de TI & Desenvolvedor Full Stack)**. O projeto foi concebido sob a metodologia **Akita Way (Anti-Vibe Engineering)** e **TDD-First absoluto**: 100% das funcionalidades possuem testes automatizados de unidade e de aceitação de ponta a ponta (E2E).
+## 📌 Sobre o Projeto
+Este repositório contém o código-fonte do meu portfólio pessoal. O objetivo foi criar uma aplicação leve, rápida e acessível, utilizando padrões modernos da web sem a necessidade de frameworks pesados para um site estático.
 
-## 🛠️ 2. Arquitetura Técnica & Stack
-- **Zero Dependências de Runtime:** 100% Vanilla HTML5 Semântico, CSS3 Moderno (Tokens & Variáveis) e JavaScript ES6+ Modular nativo.
-- **Internacionalização Nativa (i18n):** Suporte reativo em tempo real para **Português (`pt-BR`)**, **Inglês (`en-US`)** e **Espanhol (`es-ES`)** com persistência em `localStorage`.
-- **Tema Dinâmico (Dark / Light Mode):** Detecção automática de `prefers-color-scheme`, alternância manual e conformidade com alto contraste WCAG AA/AAA.
-- **Showcase de Projetos Reais:**
-  - *Aviso de Cópia* (Plugin WordPress profissional com conformidade A11y).
-  - *Módulos Odoo 19 & Python* (Arquitetura limpa e testes via TransactionCase).
-  - *Automações n8n & APIs REST* (Pipelines inteligentes de dados e webhooks).
-  - *API REST PHP 8.3* (TDD rigoroso com Pest PHP e Docker).
-  - *Game Dev no Godot Engine* (GDScript/C#, arquitetura por sinais e testes GUT).
-- **Formulário Serverless Híbrido:** Integração assíncrona com API Web3Forms e fallback direto para `mailto:` e WhatsApp.
-- **Hospedagem & CI/CD:** GitHub Pages gratuito perpétuo com automação no GitHub Actions.
+## 🛠️ Tecnologias e Decisões Técnicas
+- **Frontend Nativo:** HTML5 semântico, CSS3 moderno (Design Tokens e variáveis nativas) e JavaScript ES6+ modular.
+- **Internacionalização (i18n):** Suporte a múltiplos idiomas (**Português**, **Inglês** e **Espanhol**) com detecção automática e troca dinâmica no navegador.
+- **Tema Escuro / Claro:** Alternância de tema com detecção da preferência do sistema operacional e persistência em `localStorage`.
+- **Acessibilidade & Performance:** Estrutura focada em navegação acessível por teclado, leitor de tela e alta pontuação no Lighthouse.
+- **Testes Automatizados:** Testes unitários com Vitest e testes de fluxo no navegador com Playwright.
+- **Automação & Deploy:** CI/CD configurado no GitHub Actions para validação e publicação automática no GitHub Pages.
 
-## 🧪 3. Suíte de Testes Automatizados (TDD-First)
+## 🧪 Como Executar Localmente
 ```bash
-# Instalar dependências de desenvolvimento
+# 1. Clonar o repositório
+git clone https://github.com/mailsonm/mailsonm.github.io.git
+cd mailsonm.github.io
+
+# 2. Instalar as dependências de desenvolvimento e testes
 npm install
 
-# Executar suíte de testes unitários (Vitest + JSDOM)
+# 3. Rodar os testes unitários (Vitest)
 npm run test
 
-# Executar testes unitários com cobertura de código
-npm run test:coverage
-
-# Executar testes E2E em navegador real headless (Playwright)
+# 4. Rodar os testes E2E no navegador (Playwright)
 npm run test:e2e
 
-# Executar auditoria de segurança de dependências
-npm run audit
+# 5. Iniciar servidor local
+node scripts/server.js
 ```
 
 ---
 
 # 🇺🇸 English (EN)
 
-## 📌 1. Overview
-High-performance, modern, and responsive professional web portfolio built as the central hub for **Mailson Maia Alves (IT Consultant & Senior Full Stack Developer)**. Developed strictly following the **Akita Way (Anti-Vibe Engineering)** and **TDD-First methodology**: every single module and interactive flow is backed by automated unit and End-to-End (E2E) acceptance tests.
+## 📌 About the Project
+This repository contains the source code for my personal portfolio. The goal was to build a fast, lightweight, and accessible web application using modern standard web technologies without unnecessary framework overhead for a static site.
 
-## 🛠️ 2. Architecture & Tech Stack
-- **Zero Runtime Overhead:** 100% native Semantic HTML5, Modern CSS3 (Design Tokens & Variables), and Modular ES6+ JavaScript.
-- **Native Internationalization (i18n):** Client-side reactive multilingual engine supporting **Portuguese (`pt-BR`)**, **English (`en-US`)**, and **Spanish (`es-ES`)** with `localStorage` persistence.
-- **Dynamic Dark / Light Mode:** Automatic operating system color scheme detection (`prefers-color-scheme`), manual toggle, and strict WCAG AA/AAA contrast compliance.
-- **Featured Real-World Projects:**
-  - *Aviso de Cópia* (Accessible WordPress plugin).
-  - *Odoo 19 & Python Modules* (ERP business logic & TransactionCase test suites).
-  - *n8n Automations & APIs* (Data pipelines, webhooks, and messaging integrations).
-  - *PHP 8.3 REST API* (Strict TDD with Pest PHP and PSR-12).
-  - *Godot Game Mechanics* (GDScript/C# and GUT test runner).
-- **Serverless Contact Form:** Async Web3Forms client with instant visual feedback and direct fallback to WhatsApp and email.
-- **Hosting & CI/CD:** Perpetual free hosting on GitHub Pages with GitHub Actions automation.
+## 🛠️ Tech Stack & Key Decisions
+- **Native Frontend:** Semantic HTML5, modern CSS3 (Design Tokens and CSS variables), and modular ES6+ JavaScript.
+- **Internationalization (i18n):** Multi-language support (**Portuguese**, **English**, and **Spanish**) with browser detection and instant client-side switching.
+- **Dark / Light Theme:** Theme toggle with system preference detection and `localStorage` persistence.
+- **Accessibility & Performance:** Semantic landmarks, keyboard navigation, screen reader support, and high Lighthouse performance.
+- **Automated Testing:** Unit tests using Vitest and browser-level End-to-End tests using Playwright.
+- **CI/CD & Deployment:** Automated pipeline via GitHub Actions for continuous testing and deployment to GitHub Pages.
 
-## 🧪 3. Automated Test Suite
+## 🧪 Running Locally
 ```bash
-# Install development dependencies
+# 1. Clone the repository
+git clone https://github.com/mailsonm/mailsonm.github.io.git
+cd mailsonm.github.io
+
+# 2. Install development and testing dependencies
 npm install
 
-# Run unit test suite (Vitest + JSDOM)
+# 3. Run unit tests (Vitest)
 npm run test
 
-# Run unit tests with code coverage report
-npm run test:coverage
-
-# Run End-to-End acceptance tests in headless Chromium (Playwright)
+# 4. Run End-to-End tests (Playwright)
 npm run test:e2e
 
-# Run security vulnerability audit
-npm run audit
+# 5. Start local server
+node scripts/server.js
 ```
 
 ---
 
 # 🇪🇸 Español (ES)
 
-## 📌 1. Visión General
-Portafolio web profesional moderno, ultrarrápido y responsivo, diseñado como el centro de la presencia digital de **Mailson Maia Alves (Consultor de TI & Desarrollador Full Stack)**. Desarrollado con la metodología **Akita Way (Anti-Vibe Engineering)** y **TDD-First riguroso**: el 100% de los módulos y flujos interactivos cuentan con pruebas unitarias y de aceptación de extremo a extremo (E2E).
+## 📌 Sobre el Proyecto
+Este repositorio contiene el código fuente de mi portafolio personal. El objetivo fue construir una aplicación web ligera, rápida y accesible utilizando tecnologías nativas modernas sin sobrecarga de frameworks para un sitio estático.
 
-## 🛠️ 2. Arquitectura & Stack Tecnológico
-- **Cero Dependencias de Runtime:** 100% HTML5 Semántico, CSS3 Moderno con variables de diseño y JavaScript ES6+ Modular nativo.
-- **Internacionalización Nativa (i18n):** Soporte reactivo en tiempo real para **Portugués (`pt-BR`)**, **Inglés (`en-US`)** y **Español (`es-ES`)** con persistencia en `localStorage`.
-- **Modo Oscuro / Claro:** Detección automática del sistema operativo, alternancia manual y cumplimiento de contraste WCAG AA/AAA.
-- **Proyectos Destacados:**
-  - *Aviso de Cópia* (Plugin WordPress accesible).
-  - *Módulos Odoo 19 & Python* (Lógica ERP empresarial y pruebas TransactionCase).
-  - *Automatizaciones n8n & APIs* (Flujos de datos inteligentes y webhooks).
-  - *API REST PHP 8.3* (TDD estricto con Pest PHP y Docker).
-  - *Desarrollo de Videojuegos en Godot* (GDScript/C# y pruebas GUT).
-- **Formulario Serverless:** Envío asíncrono vía Web3Forms con fallback directo a WhatsApp y correo electrónico.
-- **Alojamiento & CI/CD:** GitHub Pages gratuito con pipelines automáticos en GitHub Actions.
+## 🛠️ Tecnologías y Decisiones Técnicas
+- **Frontend Nativo:** HTML5 semántico, CSS3 moderno (variables de diseño y tokens) y JavaScript ES6+ modular.
+- **Internacionalización (i18n):** Soporte multiidioma (**Portugués**, **Inglés** y **Español**) con detección del navegador y cambio dinámico sin recargar.
+- **Modo Oscuro / Claro:** Alternancia de tema con detección de preferencias del sistema y persistencia en `localStorage`.
+- **Accesibilidad y Rendimiento:** Estructura semántica, navegación por teclado, soporte para lectores de pantalla y alta puntuación en Lighthouse.
+- **Pruebas Automatizadas:** Pruebas unitarias con Vitest y pruebas de extremo a extremo (E2E) con Playwright.
+- **CI/CD y Despliegue:** Flujo automatizado en GitHub Actions para pruebas continuas y publicación en GitHub Pages.
 
-## 🧪 3. Ejecución de Pruebas Automatizadas
+## 🧪 Ejecución Local
 ```bash
-# Instalar dependencias de desarrollo
+# 1. Clonar el repositorio
+git clone https://github.com/mailsonm/mailsonm.github.io.git
+cd mailsonm.github.io
+
+# 2. Instalar dependencias de desarrollo
 npm install
 
-# Ejecutar pruebas unitarias (Vitest + JSDOM)
+# 3. Ejecutar pruebas unitarias (Vitest)
 npm run test
 
-# Ejecutar pruebas de cobertura de código
-npm run test:coverage
-
-# Ejecutar pruebas E2E en navegador headless (Playwright)
+# 4. Ejecutar pruebas E2E (Playwright)
 npm run test:e2e
 
-# Ejecutar auditoría de seguridad
-npm run audit
+# 5. Iniciar servidor local
+node scripts/server.js
 ```
 
 ---
 
 ## 📄 Licença / License / Licencia
-Distribuído sob a licença **MIT**. Veja o arquivo `LICENSE` para mais informações.
-
----
-*Desenvolvido com disciplina, engenharia rigorosa e TDD por [Mailson Maia Alves](https://github.com/mailsonm).*
+Distribuído sob a licença **MIT**. Veja o arquivo [`LICENSE`](file:///c:/Projectos/PLANO_PORTFOLIO_GITHUB_PAGES/LICENSE) para mais detalhes.
