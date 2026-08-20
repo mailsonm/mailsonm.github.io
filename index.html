@@ -11,12 +11,25 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mailsonm.github.io/">
 
+  <!-- Preload da Imagem Hero para Otimizar LCP (Core Web Vitals) -->
+  <link rel="preload" as="image" href="assets/img/profile-1.webp" type="image/webp">
+
+  <!-- Hreflang Canonical Tags para SEO Multilíngue -->
+  <link rel="alternate" hreflang="pt-BR" href="https://mailsonm.github.io/">
+  <link rel="alternate" hreflang="en-US" href="https://mailsonm.github.io/">
+  <link rel="alternate" hreflang="es-ES" href="https://mailsonm.github.io/">
+  <link rel="alternate" hreflang="x-default" href="https://mailsonm.github.io/">
+
   <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mailsonm.github.io/">
   <meta property="og:title" content="Mailson Maia Alves | Consultor de TI & Dev Full Stack">
   <meta property="og:description" content="Portfólio Profissional: Soluções corporativas, módulos ERP Odoo 19, plugins WordPress, automações n8n e engenharia de software com TDD.">
   <meta property="og:image" content="https://mailsonm.github.io/assets/img/profile-1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="Foto de perfil profissional de Mailson Maia Alves">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Mailson Maia - Portfólio & Consultoria">
 
@@ -31,6 +44,125 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org Rich Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mailsonm.github.io/#website",
+        "url": "https://mailsonm.github.io/",
+        "name": "Mailson Maia Alves | Portfólio & Consultoria de TI",
+        "description": "Portfólio Profissional de Mailson Maia Alves - Consultor de TI e Desenvolvedor Full Stack especializado em Odoo 19, Python, PHP 8.3, WordPress e TDD.",
+        "inLanguage": ["pt-BR", "en-US", "es-ES"],
+        "author": {
+          "@id": "https://mailsonm.github.io/#person"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://mailsonm.github.io/#webpage",
+        "url": "https://mailsonm.github.io/",
+        "name": "Mailson Maia Alves - Perfil Profissional",
+        "isPartOf": {
+          "@id": "https://mailsonm.github.io/#website"
+        },
+        "about": {
+          "@id": "https://mailsonm.github.io/#person"
+        },
+        "mainEntity": {
+          "@id": "https://mailsonm.github.io/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://mailsonm.github.io/#person",
+        "name": "Mailson Maia Alves",
+        "alternateName": ["Mailson Maia", "mailsonm"],
+        "jobTitle": "Consultor de TI & Desenvolvedor Full Stack",
+        "description": "Consultor de TI e Engenheiro de Software especialista em arquiteturas escaláveis, ERP Odoo 19, ecossistema PHP/WordPress, automações com n8n e TDD-First.",
+        "url": "https://mailsonm.github.io/",
+        "image": "https://mailsonm.github.io/assets/img/profile-1.webp",
+        "email": "mailto:mairuson@gmail.com",
+        "telephone": "+55-85-98871-2988",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fortaleza",
+          "addressRegion": "CE",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://github.com/mailsonm",
+          "https://www.linkedin.com/in/mailson-maia-alves-19a479208/",
+          "https://wa.me/5585988712988"
+        ],
+        "knowsAbout": [
+          "Odoo 19 ERP",
+          "Python 3.12",
+          "PHP 8.3",
+          "Pest PHP",
+          "WordPress VIP Plugin Development",
+          "n8n Automation",
+          "Godot Engine & GDScript",
+          "Test-Driven Development (TDD)",
+          "Docker & Containerization",
+          "CI/CD Pipelines",
+          "REST APIs & Microservices"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://mailsonm.github.io/#service",
+        "name": "Mailson Maia Alves - Consultoria de TI & Desenvolvimento",
+        "url": "https://mailsonm.github.io/",
+        "provider": {
+          "@id": "https://mailsonm.github.io/#person"
+        },
+        "areaServed": "Global",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Especializados de Tecnologia",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Consultoria de TI & Arquitetura de Software",
+                "description": "Diagnóstico técnico, planejamento arquitetural, estruturação de microsserviços e governança de código com TDD."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Desenvolvimento Odoo 19 & Python",
+                "description": "Módulos sob medida, regras de negócio fiscais/comerciais e suíte de testes com TransactionCase."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plugins WordPress & Backend PHP",
+                "description": "Desenvolvimento de plugins profissionais de alta performance compatíveis com WordPress VIP e PSR-12."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Automações n8n & Pipelines CI/CD",
+                "description": "Criação de fluxos de integração inteligentes, orquestração de APIs e automação de deploys com GitHub Actions."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Skip Link for Accessibility (A11y) -->

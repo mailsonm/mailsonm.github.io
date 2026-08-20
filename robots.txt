@@ -1,0 +1,6 @@
+# robots.txt para https://mailsonm.github.io/
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://mailsonm.github.io/sitemap.xml
