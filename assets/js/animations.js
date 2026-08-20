@@ -1,6 +1,6 @@
 /**
  * Animations & Micro-Interactions Module
- * Native Canvas Particles, Scroll Reveal (IntersectionObserver), and Interactive Glow
+ * Native Interactive Canvas Particles (with Mouse Repulsion), Staggered Scroll Reveal, and Dynamic Glow
  */
 
 /**
@@ -13,7 +13,7 @@ export function initAnimations() {
 }
 
 /**
- * Native lightweight particle constellation for the Hero section
+ * Interactive Particle Constellation with Physics Repulsion on Mouse Hover
  */
 export function initParticles() {
   const canvas = document.getElementById('hero-particles');
@@ -28,32 +28,80 @@ export function initParticles() {
   const isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (isReducedMotion) return;
 
-  const particleCount = Math.min(Math.floor((width * height) / 18000), 45);
+  // Particle count based on canvas area (denser on desktop)
+  const particleCount = Math.min(Math.floor((width * height) / 11000), 85);
   const particles = [];
+
+  // Mouse interaction state
+  const mouse = {
+    x: null,
+    y: null,
+    radius: 140, // Repulsion radius
+  };
+
+  function onMouseMove(e) {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  }
+
+  function onMouseLeave() {
+    mouse.x = null;
+    mouse.y = null;
+  }
+
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('mouseleave', onMouseLeave, { passive: true });
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 1.8 + 0.8;
-      this.baseAlpha = Math.random() * 0.4 + 0.2;
+      this.baseX = this.x;
+      this.baseY = this.y;
+      this.vx = (Math.random() - 0.5) * 0.75;
+      this.vy = (Math.random() - 0.5) * 0.75;
+      this.radius = Math.random() * 2.0 + 0.8;
+      this.baseAlpha = Math.random() * 0.45 + 0.25;
+      this.density = Math.random() * 20 + 5;
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
 
+      // Bounce on boundaries
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Physics Repulsion from Mouse Cursor
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < mouse.radius && dist > 0) {
+          const forceDirectionX = dx / dist;
+          const forceDirectionY = dy / dist;
+          const maxDistance = mouse.radius;
+          const force = (maxDistance - dist) / maxDistance;
+          const directionX = forceDirectionX * force * this.density * 0.6;
+          const directionY = forceDirectionY * force * this.density * 0.6;
+
+          this.x -= directionX;
+          this.y -= directionY;
+        }
+      }
     }
 
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(0, 242, 254, ${this.baseAlpha})`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = 'rgba(0, 242, 254, 0.4)';
       ctx.fill();
+      ctx.shadowBlur = 0; // Reset
     }
   }
 
@@ -70,18 +118,36 @@ export function initParticles() {
       particles[i].update();
       particles[i].draw();
 
+      // Connect particles to each other
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.hypot(dx, dy);
 
-        if (dist < 110) {
+        if (dist < 120) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          const alpha = (1 - dist / 110) * 0.18;
+          const alpha = (1 - dist / 120) * 0.22;
           ctx.strokeStyle = `rgba(0, 242, 254, ${alpha})`;
-          ctx.lineWidth = 0.7;
+          ctx.lineWidth = 0.75;
+          ctx.stroke();
+        }
+      }
+
+      // Connect particles to mouse cursor when close
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - particles[i].x;
+        const dy = mouse.y - particles[i].y;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < mouse.radius) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          const alpha = (1 - dist / mouse.radius) * 0.35;
+          ctx.strokeStyle = `rgba(0, 230, 118, ${alpha})`;
+          ctx.lineWidth = 0.9;
           ctx.stroke();
         }
       }
@@ -104,16 +170,23 @@ export function initParticles() {
 }
 
 /**
- * Scroll Reveal using native IntersectionObserver
+ * Scroll Reveal using native IntersectionObserver with Staggered Cascade
  */
 export function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal-fade-up, .reveal-fade-in');
-  if (!revealElements.length) return;
+  const revealContainers = document.querySelectorAll('.reveal-fade-up, .reveal-fade-in, .reveal-stagger');
+  if (!revealContainers.length) return;
 
   if (!('IntersectionObserver' in window)) {
-    revealElements.forEach(el => el.classList.add('revealed'));
+    revealContainers.forEach(el => el.classList.add('revealed'));
     return;
   }
+
+  // Assign stagger indexes to grid children
+  document.querySelectorAll('.reveal-stagger').forEach(container => {
+    Array.from(container.children).forEach((child, idx) => {
+      child.style.setProperty('--stagger-index', (idx + 1).toString());
+    });
+  });
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -125,19 +198,19 @@ export function initScrollReveal() {
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px',
     }
   );
 
-  revealElements.forEach((el) => observer.observe(el));
+  revealContainers.forEach((el) => observer.observe(el));
 }
 
 /**
- * Subtle interactive spotlight on project cards
+ * Subtle interactive spotlight on project and methodology cards
  */
 export function initCardSpotlight() {
-  const cards = document.querySelectorAll('.project-card, .methodology-card');
+  const cards = document.querySelectorAll('.project-card, .methodology-card, .skill-card, .service-card');
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();

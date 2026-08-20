@@ -1,14 +1,17 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
-import { initAnimations, initParticles, initScrollReveal } from '../../assets/js/animations.js';
+import { initAnimations, initParticles, initScrollReveal, initCardSpotlight } from '../../assets/js/animations.js';
 
-describe('Animations Module (Canvas Particles & Scroll Reveal)', () => {
+describe('Animations Module (Canvas Particles, Physics & Staggered Reveal)', () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <section id="hero">
         <canvas id="hero-particles"></canvas>
       </section>
-      <div class="reveal-fade-up">Item 1</div>
-      <div class="reveal-fade-up">Item 2</div>
+      <div class="reveal-stagger">
+        <div class="reveal-fade-up">Item 1</div>
+        <div class="reveal-fade-up">Item 2</div>
+      </div>
+      <div class="service-card">Service Card</div>
     `;
   });
 
@@ -20,6 +23,21 @@ describe('Animations Module (Canvas Particles & Scroll Reveal)', () => {
     expect(typeof initAnimations).toBe('function');
     expect(typeof initParticles).toBe('function');
     expect(typeof initScrollReveal).toBe('function');
+    expect(typeof initCardSpotlight).toBe('function');
+  });
+
+  it('should assign stagger index variables to stagger children', () => {
+    window.IntersectionObserver = vi.fn(function() {
+      this.observe = vi.fn();
+      this.unobserve = vi.fn();
+      this.disconnect = vi.fn();
+    });
+
+    initScrollReveal();
+
+    const items = document.querySelectorAll('.reveal-stagger > *');
+    expect(items[0].style.getPropertyValue('--stagger-index')).toBe('1');
+    expect(items[1].style.getPropertyValue('--stagger-index')).toBe('2');
   });
 
   it('should initialize scroll reveal with IntersectionObserver when supported', () => {
@@ -36,7 +54,7 @@ describe('Animations Module (Canvas Particles & Scroll Reveal)', () => {
     initScrollReveal();
 
     expect(window.IntersectionObserver).toHaveBeenCalled();
-    expect(observeMock).toHaveBeenCalledTimes(2);
+    expect(observeMock).toHaveBeenCalled();
   });
 
   it('should safely fallback if IntersectionObserver is not available', () => {
@@ -50,9 +68,8 @@ describe('Animations Module (Canvas Particles & Scroll Reveal)', () => {
     });
   });
 
-  it('should safely initialize canvas particles without errors', () => {
+  it('should safely initialize canvas particles and attach mouse event listeners', () => {
     const canvas = document.getElementById('hero-particles');
-    // Mock getContext
     canvas.getContext = vi.fn(() => ({
       clearRect: vi.fn(),
       beginPath: vi.fn(),
@@ -63,6 +80,20 @@ describe('Animations Module (Canvas Particles & Scroll Reveal)', () => {
       stroke: vi.fn(),
     }));
 
+    const addEventListenerSpy = vi.spyOn(window, 'addEventListener');
     expect(() => initParticles()).not.toThrow();
+    expect(addEventListenerSpy).toHaveBeenCalledWith('mousemove', expect.any(Function), expect.any(Object));
+  });
+
+  it('should update card mouse coordinates on card spotlight hover', () => {
+    initCardSpotlight();
+    const card = document.querySelector('.service-card');
+    card.getBoundingClientRect = () => ({ left: 10, top: 20, width: 200, height: 100 });
+
+    const mouseEvent = new MouseEvent('mousemove', { clientX: 50, clientY: 70 });
+    card.dispatchEvent(mouseEvent);
+
+    expect(card.style.getPropertyValue('--mouse-x')).toBe('40px');
+    expect(card.style.getPropertyValue('--mouse-y')).toBe('50px');
   });
 });

@@ -166,8 +166,10 @@ export function renderProjects(category = 'all', container = document.getElement
   container.innerHTML = '';
   const filtered = filterProjects(category);
 
-  filtered.forEach(project => {
+  filtered.forEach((project, index) => {
     const card = createProjectCard(project, lang);
+    card.classList.add('reveal-fade-up', 'revealed');
+    card.style.setProperty('--stagger-index', (index + 1).toString());
     container.appendChild(card);
   });
 }

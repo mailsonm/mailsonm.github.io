@@ -69,6 +69,7 @@
     
     <!-- 1. Hero Section -->
     <section id="hero" class="hero-section">
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
       <canvas id="hero-particles" aria-hidden="true"></canvas>
       <div class="ambient-glow glow-hero-1" aria-hidden="true"></div>
       <div class="ambient-glow glow-hero-2" aria-hidden="true"></div>
@@ -136,17 +137,39 @@
           </div>
         </div>
 
+        <!-- Terminal Code Showcase Mockup -->
+        <div class="code-terminal-card reveal-fade-up" aria-label="Terminal de Demonstração de Código">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="terminal-title">mailson@dev: ~/portfolio (main)</div>
+          </div>
+          <div class="terminal-body">
+            <pre><code><span class="t-keyword">class</span> <span class="t-class">SeniorConsultant</span> <span class="t-keyword">implements</span> <span class="t-interface">FullStackEngineer</span> {
+  <span class="t-keyword">public</span> <span class="t-type">array</span> <span class="t-var">$coreStack</span> = [<span class="t-string">'PHP 8.3 (Pest)'</span>, <span class="t-string">'Odoo 19 / Python'</span>, <span class="t-string">'n8n'</span>, <span class="t-string">'Godot'</span>];
+  <span class="t-keyword">public</span> <span class="t-type">string</span> <span class="t-var">$methodology</span> = <span class="t-string">'Akita Way + Strict TDD-First'</span>;
+
+  <span class="t-keyword">public</span> <span class="t-type">function</span> <span class="t-func">deliverSolution</span>(): <span class="t-type">Result</span> {
+    <span class="t-keyword">return</span> <span class="t-var">$this</span>->writeTestsFirst()->buildRobustCode()->deploy();
+  }
+}</code></pre>
+          </div>
+        </div>
+
         <!-- Metrics Highlights -->
-        <div class="metrics-grid">
-          <div class="metric-card">
+        <div class="metrics-grid reveal-stagger">
+          <div class="metric-card reveal-fade-up">
             <div class="metric-number">+10</div>
             <div class="metric-label" data-i18n="about.metric_exp">Anos de Experiência em TI</div>
           </div>
-          <div class="metric-card">
+          <div class="metric-card reveal-fade-up">
             <div class="metric-number">+50</div>
             <div class="metric-label" data-i18n="about.metric_projects">Módulos, Plugins & Automações</div>
           </div>
-          <div class="metric-card">
+          <div class="metric-card reveal-fade-up">
             <div class="metric-number">100%</div>
             <div class="metric-label" data-i18n="about.metric_tdd">Cobertura com TDD Automatizado</div>
           </div>
@@ -161,8 +184,8 @@
           <h2 class="section-title" data-i18n="skills.title">Matriz de Especialidades</h2>
           <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologias e Ferramentas Dominadas</p>
         </div>
-        <div class="skills-grid">
-          <div class="skill-card">
+        <div class="skills-grid reveal-stagger">
+          <div class="skill-card reveal-fade-up">
             <div class="skill-icon">🐘</div>
             <h3 class="skill-title" data-i18n="skills.backend_title">Backend & ERP</h3>
             <p class="skill-desc" data-i18n="skills.backend_desc">
@@ -170,7 +193,7 @@
             </p>
           </div>
 
-          <div class="skill-card">
+          <div class="skill-card reveal-fade-up">
             <div class="skill-icon">⚡</div>
             <h3 class="skill-title" data-i18n="skills.frontend_title">Frontend & UI</h3>
             <p class="skill-desc" data-i18n="skills.frontend_desc">
@@ -178,7 +201,7 @@
             </p>
           </div>
 
-          <div class="skill-card">
+          <div class="skill-card reveal-fade-up">
             <div class="skill-icon">🔄</div>
             <h3 class="skill-title" data-i18n="skills.devops_title">DevOps & Automações</h3>
             <p class="skill-desc" data-i18n="skills.devops_desc">
@@ -186,7 +209,7 @@
             </p>
           </div>
 
-          <div class="skill-card">
+          <div class="skill-card reveal-fade-up">
             <div class="skill-icon">🎮</div>
             <h3 class="skill-title" data-i18n="skills.gamedev_title">Game Development</h3>
             <p class="skill-desc" data-i18n="skills.gamedev_desc">
@@ -216,7 +239,7 @@
         </div>
 
         <!-- Dynamic Grid injected by assets/js/projects.js -->
-        <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
+        <div id="projects-grid" class="projects-grid reveal-stagger" aria-live="polite"></div>
       </div>
     </section>
 
@@ -227,26 +250,26 @@
           <h2 class="section-title" data-i18n="services.title">Serviços & Consultoria</h2>
           <p class="section-subtitle" data-i18n="services.subtitle">Como posso agregar valor ao seu projeto ou empresa</p>
         </div>
-        <div class="services-grid">
-          <div class="service-card">
+        <div class="services-grid reveal-stagger">
+          <div class="service-card reveal-fade-up">
             <h3 class="service-title" data-i18n="services.s1_title">Consultoria de TI & Arquitetura</h3>
             <p class="service-desc" data-i18n="services.s1_desc">
               Diagnóstico técnico, planejamento arquitetural, estruturação de microsserviços e definição de padrões de engenharia.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal-fade-up">
             <h3 class="service-title" data-i18n="services.s2_title">Desenvolvimento Odoo 19 & Python</h3>
             <p class="service-desc" data-i18n="services.s2_desc">
               Criação de módulos sob medida, customizações avançadas de regras de negócio, integrações via API e testes automatizados.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal-fade-up">
             <h3 class="service-title" data-i18n="services.s3_title">Plugins WordPress & Backend PHP</h3>
             <p class="service-desc" data-i18n="services.s3_desc">
               Desenvolvimento de plugins profissionais de alta performance, compatíveis com WordPress VIP e padrões PSR-12.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal-fade-up">
             <h3 class="service-title" data-i18n="services.s4_title">Automações n8n & Pipelines CI/CD</h3>
             <p class="service-desc" data-i18n="services.s4_desc">
               Criação de fluxos inteligentes de dados no n8n.io, scripts de automação CLI/PowerShell e pipelines no GitHub Actions.
