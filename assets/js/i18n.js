@@ -34,7 +34,7 @@ export const translations = {
       title: 'Sobre Mim & Metodologia',
       subtitle: 'Engenharia de Software com Disciplina e Resultados',
       p1: 'Com sólida experiência em Consultoria de TI e Desenvolvimento Full Stack, atuo na construção de soluções empresariais robustas, integrações de sistemas complexos e desenvolvimento de plugins e automações de alta produtividade.',
-      p2: 'Sigo a metodologia Akita Way (Anti-Vibe Engineering) e TDD-First rigoroso: se uma funcionalidade não possui testes automatizados, ela não existe. Foco em Clean Code, SOLID, manutenibilidade e performance extrema.',
+      p2: 'Comprometido com a excelência técnica através de desenvolvimento orientado a testes (TDD-First): se uma regra de negócio não é coberta por testes automatizados, ela não está pronta para produção. Aplico Clean Code e SOLID para garantir estabilidade, segurança e alta performance em escala.',
       metric_exp: 'Anos de Experiência em TI',
       metric_projects: 'Módulos, Plugins & Automações',
       metric_tdd: 'Cobertura com TDD Automatizado'
@@ -126,7 +126,7 @@ export const translations = {
       title: 'About Me & Methodology',
       subtitle: 'Software Engineering with Discipline and Impact',
       p1: 'With solid experience in IT Consulting and Full Stack Development, I build robust enterprise solutions, complex system integrations, high-productivity plugins and automated workflows.',
-      p2: 'I follow the Akita Way (Anti-Vibe Engineering) and strict TDD-First: if a feature lacks automated tests, it does not exist. Focused on Clean Code, SOLID, maintainability, and top-tier performance.',
+      p2: 'Committed to technical excellence through Test-Driven Development (TDD-First): if a business rule is not backed by automated tests, it is not production-ready. I apply Clean Code and SOLID to ensure stability, security, and scalability.',
       metric_exp: 'Years of IT Experience',
       metric_projects: 'Modules, Plugins & Automations',
       metric_tdd: 'Automated TDD Coverage'
@@ -202,7 +202,7 @@ export const translations = {
       projects: 'Proyectos',
       services: 'Servicios',
       contact: 'Contacto',
-      theme_aria: 'Alternar tema claro/oscuro',
+      theme_aria: 'Alternar tema claro/escuro',
       lang_aria: 'Seleccionar idioma'
     },
     hero: {
@@ -218,7 +218,7 @@ export const translations = {
       title: 'Sobre Mí & Metodología',
       subtitle: 'Ingeniería de Software con Disciplina y Resultados',
       p1: 'Con sólida experiencia en Consultoría de TI y Desarrollo Full Stack, desarrollo soluciones empresariales robustas, integraciones de sistemas complejos, plugins y automatizaciones de alta productividad.',
-      p2: 'Sigo la metodología Akita Way (Anti-Vibe Engineering) y TDD-First riguroso: si una funcionalidad no tiene pruebas automatizadas, no existe. Enfoque en Clean Code, SOLID y rendimiento extremo.',
+      p2: 'Comprometido con la excelencia técnica mediante el desarrollo guiado por pruebas (TDD-First): si una regla de negocio no está cubierta por pruebas automatizadas, no está lista para producción. Aplico Clean Code y SOLID para garantizar estabilidad, seguridad y escalabilidad.',
       metric_exp: 'Años de Experiencia en TI',
       metric_projects: 'Módulos, Plugins y Automatizaciones',
       metric_tdd: 'Cobertura con TDD Automatizado'

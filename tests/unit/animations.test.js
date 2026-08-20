@@ -40,12 +40,14 @@ describe('Animations Module (Canvas Particles, Physics & Staggered Reveal)', () 
     expect(items[1].style.getPropertyValue('--stagger-index')).toBe('2');
   });
 
-  it('should initialize scroll reveal with IntersectionObserver when supported', () => {
+  it('should initialize scroll reveal with IntersectionObserver and toggle .revealed bi-directionally', () => {
+    let observerCallback;
     const observeMock = vi.fn();
     const unobserveMock = vi.fn();
     const disconnectMock = vi.fn();
 
     window.IntersectionObserver = vi.fn(function(callback) {
+      observerCallback = callback;
       this.observe = observeMock;
       this.unobserve = unobserveMock;
       this.disconnect = disconnectMock;
@@ -55,6 +57,20 @@ describe('Animations Module (Canvas Particles, Physics & Staggered Reveal)', () 
 
     expect(window.IntersectionObserver).toHaveBeenCalled();
     expect(observeMock).toHaveBeenCalled();
+
+    const targetEl = document.querySelector('.reveal-fade-up');
+    
+    // Simulate element entering viewport
+    observerCallback([{ target: targetEl, isIntersecting: true }]);
+    expect(targetEl.classList.contains('revealed')).toBe(true);
+
+    // Simulate element leaving viewport (scroll out)
+    observerCallback([{ target: targetEl, isIntersecting: false }]);
+    expect(targetEl.classList.contains('revealed')).toBe(false);
+
+    // Simulate element entering viewport again (scroll back)
+    observerCallback([{ target: targetEl, isIntersecting: true }]);
+    expect(targetEl.classList.contains('revealed')).toBe(true);
   });
 
   it('should safely fallback if IntersectionObserver is not available', () => {

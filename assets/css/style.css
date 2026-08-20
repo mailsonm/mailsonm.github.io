@@ -963,16 +963,17 @@ body::before {
 /* Scroll Reveal Animations with Staggering */
 .reveal-fade-up {
   opacity: 0;
-  transform: translateY(32px) scale(0.97);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: calc(var(--stagger-index, 0) * 80ms);
+  transform: translateY(38px) scale(0.96);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-index, 0) * 90ms);
   will-change: opacity, transform;
 }
 
 .reveal-fade-in {
   opacity: 0;
-  transition: opacity 0.75s ease;
-  transition-delay: calc(var(--stagger-index, 0) * 80ms);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-index, 0) * 90ms);
+  will-change: opacity;
 }
 
 .reveal-fade-up.revealed,
