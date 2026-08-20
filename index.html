@@ -211,7 +211,7 @@
 
       <div class="container hero-container reveal-fade-up">
         <div class="hero-avatar">
-          <img src="assets/img/profile-1.webp" alt="Mailson Maia Alves" width="160" height="160" class="avatar-img" />
+          <img src="assets/img/profile-1.webp" alt="Mailson Maia Alves" width="160" height="160" class="avatar-img" fetchpriority="high" decoding="async" />
         </div>
         <div class="hero-content">
           <span class="hero-greeting" data-i18n="hero.greeting">Olá, me chamo</span>
@@ -223,7 +223,7 @@
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary" data-i18n="hero.btn_projects">Ver Projetos <span class="link-arrow">↓</span></a>
             <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn_contact">Entrar em Contato</a>
-            <a href="https://github.com/mailsonm" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.btn_resume">GitHub Profile <span class="link-arrow">↗</span></a>
+            <a href="https://github.com/mailsonm" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.btn_github">Perfil no GitHub <span class="link-arrow">↗</span></a>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@
             <p class="contact-direct-desc">Entre em contato direto pelos canais abaixo para respostas rápidas:</p>
             
             <div class="direct-channels">
-              <a href="https://wa.me/5585988712988" target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-whatsapp">
+              <a href="https://wa.me/5585988712988?text=Ol%C3%A1%20Mailson,%20visitei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-whatsapp">
                 <span class="btn-icon-symbol" aria-hidden="true">💬</span>
                 <span data-i18n="contact.whatsapp_btn">Falar no WhatsApp</span>
               </a>
@@ -491,6 +491,16 @@
       <p class="footer-tech" data-i18n="footer.tech_note">Hospedado no GitHub Pages com Vanilla JS, CSS3 e HTML5 Semântico.</p>
     </div>
   </footer>
+
+  <!-- Mobile Floating Quick Contact CTA (CRO) -->
+  <a href="https://wa.me/5585988712988?text=Ol%C3%A1%20Mailson,%20visitei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." 
+     class="floating-whatsapp" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Falar no WhatsApp (abre em nova aba)" 
+     title="Falar no WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
 
   <!-- Application Entrypoint -->
   <script type="module" src="assets/js/main.js"></script>

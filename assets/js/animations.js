@@ -109,9 +109,11 @@ export function initParticles() {
     particles.push(new Particle());
   }
 
-  let animationFrameId;
+  let animationFrameId = null;
+  let isRunning = false;
 
   function animate() {
+    if (!isRunning) return;
     ctx.clearRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -156,14 +158,60 @@ export function initParticles() {
     animationFrameId = requestAnimationFrame(animate);
   }
 
-  if (typeof requestAnimationFrame === 'function') {
-    animate();
+  function startAnimation() {
+    if (!isRunning) {
+      isRunning = true;
+      if (typeof requestAnimationFrame === 'function') {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    }
   }
 
+  function stopAnimation() {
+    isRunning = false;
+    if (animationFrameId && typeof cancelAnimationFrame === 'function') {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+  }
+
+  // 1. Pause Canvas loop with IntersectionObserver when Hero is out of viewport
+  const heroSection = document.getElementById('hero');
+  if (heroSection && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !document.hidden) {
+          startAnimation();
+        } else {
+          stopAnimation();
+        }
+      });
+    }, { threshold: 0.05 });
+    heroObserver.observe(heroSection);
+  } else {
+    startAnimation();
+  }
+
+  // 2. Pause Canvas loop when browser tab is inactive/hidden
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else if (heroSection && heroSection.getBoundingClientRect().bottom > 0) {
+        startAnimation();
+      }
+    });
+  }
+
+  // 3. Debounced Resize Handler
+  let resizeTimeout;
   function handleResize() {
-    if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.parentElement.offsetHeight;
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (!canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    }, 150);
   }
 
   window.addEventListener('resize', handleResize, { passive: true });

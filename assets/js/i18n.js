@@ -29,6 +29,7 @@ export const translations = {
       description: 'Especialista em arquiteturas escaláveis, ERP Odoo 19 / Python, ecossistema PHP/WordPress, automações com n8n e desenvolvimento orientado a testes (TDD-First).',
       btn_projects: 'Ver Projetos',
       btn_contact: 'Entrar em Contato',
+      btn_github: 'Perfil no GitHub',
       btn_resume: 'Baixar CV'
     },
     about: {
@@ -124,6 +125,7 @@ export const translations = {
       description: 'Specialist in scalable architectures, Odoo 19 ERP / Python, PHP/WordPress ecosystem, n8n automations, and Test-Driven Development (TDD-First).',
       btn_projects: 'View Projects',
       btn_contact: 'Get in Touch',
+      btn_github: 'GitHub Profile',
       btn_resume: 'Download CV'
     },
     about: {
@@ -219,6 +221,7 @@ export const translations = {
       description: 'Especialista en arquitecturas escalables, ERP Odoo 19 / Python, ecosistema PHP/WordPress, automatizaciones con n8n y desarrollo guiado por pruebas (TDD-First).',
       btn_projects: 'Ver Proyectos',
       btn_contact: 'Contactar',
+      btn_github: 'Perfil de GitHub',
       btn_resume: 'Descargar CV'
     },
     about: {
