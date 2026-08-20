@@ -151,14 +151,14 @@ export function createProjectCard(project, lang = getEffectiveLanguage()) {
   const safeLive = sanitizeUrl(project.liveUrl);
 
   let linksHtml = safeGithub 
-    ? `<a href="${safeGithub}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">${btnCodeText}</a>`
+    ? `<a href="${safeGithub}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github" aria-label="${btnCodeText}: ${titleText} (abre em nova aba)">${btnCodeText}</a>`
     : '';
   
   if (safeDocs) {
-    linksHtml += `<a href="${safeDocs}" target="_blank" rel="noopener noreferrer" class="btn-project btn-docs">${btnDocsText}</a>`;
+    linksHtml += `<a href="${safeDocs}" target="_blank" rel="noopener noreferrer" class="btn-project btn-docs" aria-label="${btnDocsText}: ${titleText} (abre em nova aba)">${btnDocsText}</a>`;
   }
   if (safeLive) {
-    linksHtml += `<a href="${safeLive}" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">${btnLiveText}</a>`;
+    linksHtml += `<a href="${safeLive}" target="_blank" rel="noopener noreferrer" class="btn-project btn-live" aria-label="${btnLiveText}: ${titleText} (abre em nova aba)">${btnLiveText}</a>`;
   }
 
   article.innerHTML = `

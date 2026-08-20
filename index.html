@@ -171,7 +171,7 @@
 </head>
 <body>
   <!-- Skip Link for Accessibility (A11y) -->
-  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  <a href="#main-content" class="skip-link" data-i18n="nav.skip_link">Pular para o conteúdo principal</a>
 
   <!-- Header & Navigation -->
   <header id="header" class="site-header">
@@ -232,23 +232,23 @@
     <!-- Infinite Skills Marquee Ticker -->
     <section class="skills-marquee" aria-label="Tecnologias em Destaque">
       <div class="marquee-track">
-        <div class="marquee-item"><span>PHP 8.3+ & Pest</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Odoo 19 & Python</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>WordPress Plugins</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Automações n8n.io</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Godot Engine</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>REST APIs</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Docker & Linux</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>TDD-First & CI/CD</span><span class="dot">•</span></div>
-        <!-- Duplicated for seamless infinite loop -->
-        <div class="marquee-item"><span>PHP 8.3+ & Pest</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Odoo 19 & Python</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>WordPress Plugins</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Automações n8n.io</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Godot Engine</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>REST APIs</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>Docker & Linux</span><span class="dot">•</span></div>
-        <div class="marquee-item"><span>TDD-First & CI/CD</span><span class="dot">•</span></div>
+        <div class="marquee-item"><span>PHP 8.3+ & Pest</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>Odoo 19 & Python</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>WordPress Plugins</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>Automações n8n.io</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>Godot Engine</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>REST APIs</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>Docker & Linux</span><span class="dot" aria-hidden="true">•</span></div>
+        <div class="marquee-item"><span>TDD-First & CI/CD</span><span class="dot" aria-hidden="true">•</span></div>
+        <!-- Duplicated for seamless infinite loop (hidden from assistive tech) -->
+        <div class="marquee-item" aria-hidden="true"><span>PHP 8.3+ & Pest</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>Odoo 19 & Python</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>WordPress Plugins</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>Automações n8n.io</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>Godot Engine</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>REST APIs</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>Docker & Linux</span><span class="dot">•</span></div>
+        <div class="marquee-item" aria-hidden="true"><span>TDD-First & CI/CD</span><span class="dot">•</span></div>
       </div>
     </section>
 
@@ -273,8 +273,8 @@
         </div>
 
         <!-- Terminal Code Showcase Mockup -->
-        <div class="code-terminal-card reveal-fade-up" aria-label="Terminal de Demonstração de Código">
-          <div class="terminal-header">
+        <div class="code-terminal-card reveal-fade-up" role="region" aria-label="Terminal de Demonstração de Código">
+          <div class="terminal-header" aria-hidden="true">
             <div class="terminal-dots">
               <span class="dot-red"></span>
               <span class="dot-yellow"></span>
@@ -430,15 +430,15 @@
             
             <div class="direct-channels">
               <a href="https://wa.me/5585988712988" target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-whatsapp">
-                <span class="btn-icon-symbol">💬</span>
+                <span class="btn-icon-symbol" aria-hidden="true">💬</span>
                 <span data-i18n="contact.whatsapp_btn">Falar no WhatsApp</span>
               </a>
               <a href="https://www.linkedin.com/in/mailson-maia-alves-19a479208/" target="_blank" rel="noopener noreferrer" class="btn btn-direct btn-linkedin">
-                <span class="btn-icon-symbol">💼</span>
+                <span class="btn-icon-symbol" aria-hidden="true">💼</span>
                 <span data-i18n="contact.linkedin_btn">Conectar no LinkedIn</span>
               </a>
               <a href="mailto:mairuson@gmail.com" class="btn btn-direct btn-email">
-                <span class="btn-icon-symbol">✉️</span>
+                <span class="btn-icon-symbol" aria-hidden="true">✉️</span>
                 <span data-i18n="contact.email_btn">Enviar E-mail Direto</span>
               </a>
             </div>

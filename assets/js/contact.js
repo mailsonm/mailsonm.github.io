@@ -191,6 +191,14 @@ export function initContactForm() {
     const messageInput = form.querySelector('[name="message"]') || document.getElementById('contact-message');
     const keyInput = form.querySelector('[name="access_key"]');
 
+    // Reset previous error attributes
+    [nameInput, emailInput, messageInput].forEach(input => {
+      if (input) {
+        input.removeAttribute('aria-invalid');
+        input.removeAttribute('aria-describedby');
+      }
+    });
+
     const formData = {
       name: nameInput ? nameInput.value : '',
       email: emailInput ? emailInput.value : '',
@@ -200,10 +208,19 @@ export function initContactForm() {
     const validation = validateContactForm(formData);
 
     if (!validation.isValid) {
+      const [firstKey, errorMessage] = Object.entries(validation.errors)[0];
+      const targetInput = form.querySelector(`[name="${firstKey}"]`);
+
       if (statusDiv) {
         statusDiv.className = 'status-msg error';
-        statusDiv.textContent = Object.values(validation.errors)[0];
+        statusDiv.textContent = errorMessage;
         statusDiv.classList.remove('hidden');
+      }
+
+      if (targetInput) {
+        targetInput.setAttribute('aria-invalid', 'true');
+        targetInput.setAttribute('aria-describedby', 'contact-status');
+        targetInput.focus();
       }
       return;
     }

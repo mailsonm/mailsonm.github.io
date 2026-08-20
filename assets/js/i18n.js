@@ -13,6 +13,7 @@ export const translations = {
       name: 'Mailson Maia'
     },
     nav: {
+      skip_link: 'Pular para o conteúdo principal',
       about: 'Sobre',
       skills: 'Especialidades',
       projects: 'Projetos',
@@ -107,6 +108,7 @@ export const translations = {
       name: 'Mailson Maia'
     },
     nav: {
+      skip_link: 'Skip to main content',
       about: 'About',
       skills: 'Skills',
       projects: 'Projects',
@@ -201,6 +203,7 @@ export const translations = {
       name: 'Mailson Maia'
     },
     nav: {
+      skip_link: 'Saltar al contenido principal',
       about: 'Sobre mí',
       skills: 'Especialidades',
       projects: 'Proyectos',

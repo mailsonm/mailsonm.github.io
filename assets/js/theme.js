@@ -51,6 +51,12 @@ export function applyTheme(theme) {
   const targetTheme = (theme === THEME_LIGHT) ? THEME_LIGHT : THEME_DARK;
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('data-theme', targetTheme);
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      const isLight = targetTheme === THEME_LIGHT;
+      toggleBtn.setAttribute('aria-label', isLight ? 'Alternar para tema escuro' : 'Alternar para tema claro');
+      toggleBtn.setAttribute('title', isLight ? 'Ativar tema escuro' : 'Ativar tema claro');
+    }
   }
   if (typeof localStorage !== 'undefined') {
     localStorage.setItem(THEME_STORAGE_KEY, targetTheme);
