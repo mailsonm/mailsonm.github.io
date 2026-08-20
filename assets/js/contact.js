@@ -5,7 +5,7 @@
 
 import { getEffectiveLanguage, translate } from './i18n.js';
 
-export const DEFAULT_RECEIVER_EMAIL = '59203034+mailsonm@users.noreply.github.com';
+export const DEFAULT_RECEIVER_EMAIL = 'mairuson@gmail.com';
 export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 /**

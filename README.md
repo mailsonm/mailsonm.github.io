@@ -6,7 +6,7 @@
 
 > **Deploy ao vivo:** [https://mailsonm.github.io/](https://mailsonm.github.io/)  
 > **Autor:** Mailson Maia Alves (Consultor de TI & Desenvolvedor Full Stack)  
-> **Contato:** `59203034+mailsonm@users.noreply.github.com` | [LinkedIn](https://www.linkedin.com/in/mailsonm) | [GitHub](https://github.com/mailsonm)
+> **Contato:** `mairuson@gmail.com` | [LinkedIn](https://www.linkedin.com/in/mailson-maia-alves-19a479208/) | [GitHub](https://github.com/mailsonm)
 
 ---
 
