@@ -9,6 +9,39 @@ import { initProjectsFilter } from './projects.js';
 import { initContactForm } from './contact.js';
 import { initAnimations } from './animations.js';
 
+export function initMobileMenu() {
+  if (typeof document === 'undefined') return;
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (!toggleBtn || !navLinks) return;
+
+  function closeMenu() {
+    navLinks.classList.remove('mobile-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    const icon = toggleBtn.querySelector('.hamburger-icon');
+    if (icon) icon.textContent = '☰';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('mobile-open');
+    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const icon = toggleBtn.querySelector('.hamburger-icon');
+    if (icon) icon.textContent = isOpen ? '✕' : '☰';
+  });
+
+  // Close menu when a navigation anchor is clicked
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+      closeMenu();
+    }
+  });
+}
+
 export function initApp() {
   // 1. Initialize Theme (Dark/Light Mode)
   initTheme();
@@ -16,16 +49,19 @@ export function initApp() {
   // 2. Initialize i18n Translations
   initI18n();
 
-  // 3. Initialize Projects Showcase & Filters
+  // 3. Initialize Mobile Menu Toggle
+  initMobileMenu();
+
+  // 4. Initialize Projects Showcase & Filters
   initProjectsFilter();
 
-  // 4. Initialize Contact Form & Validations
+  // 5. Initialize Contact Form & Validations
   initContactForm();
 
-  // 5. Initialize Particles, Scroll Reveal & Interactive Animations
+  // 6. Initialize Particles, Scroll Reveal & Interactive Animations
   initAnimations();
 
-  // 6. Update Dynamic Current Year in Footer
+  // 7. Update Dynamic Current Year in Footer
   if (typeof document !== 'undefined') {
     const yearEl = document.getElementById('current-year');
     if (yearEl) {

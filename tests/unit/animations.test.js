@@ -40,7 +40,7 @@ describe('Animations Module (Canvas Particles, Physics & Staggered Reveal)', () 
     expect(items[1].style.getPropertyValue('--stagger-index')).toBe('2');
   });
 
-  it('should initialize scroll reveal with IntersectionObserver and toggle .revealed bi-directionally', () => {
+  it('should initialize scroll reveal with IntersectionObserver and persist .revealed class on viewport entry', () => {
     let observerCallback;
     const observeMock = vi.fn();
     const unobserveMock = vi.fn();
@@ -63,13 +63,10 @@ describe('Animations Module (Canvas Particles, Physics & Staggered Reveal)', () 
     // Simulate element entering viewport
     observerCallback([{ target: targetEl, isIntersecting: true }]);
     expect(targetEl.classList.contains('revealed')).toBe(true);
+    expect(unobserveMock).toHaveBeenCalledWith(targetEl);
 
-    // Simulate element leaving viewport (scroll out)
+    // Simulate element leaving viewport (scroll out) - should remain revealed
     observerCallback([{ target: targetEl, isIntersecting: false }]);
-    expect(targetEl.classList.contains('revealed')).toBe(false);
-
-    // Simulate element entering viewport again (scroll back)
-    observerCallback([{ target: targetEl, isIntersecting: true }]);
     expect(targetEl.classList.contains('revealed')).toBe(true);
   });
 
