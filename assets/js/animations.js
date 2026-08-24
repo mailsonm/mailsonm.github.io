@@ -241,12 +241,13 @@ export function initScrollReveal() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('revealed');
         }
       });
     },
     {
-      threshold: 0.1,
+      threshold: 0.12,
       rootMargin: '0px 0px -40px 0px',
     }
   );
