@@ -4,17 +4,24 @@
   "description": "Portfólio Profissional de Mailson Maia Alves no GitHub Pages",
   "type": "module",
   "scripts": {
+    "build:blog": "node scripts/build-blog.js --execute",
+    "build": "npm run build:blog",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e",
     "audit": "npm audit"
   },
   "author": "Mailson Maia Alves <59203034+mailsonm@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.12.0",
     "jsdom": "^30.0.1",
+    "marked": "^18.0.11",
+    "marked-highlight": "^2.2.4",
     "sharp": "^0.35.3",
     "vitest": "^4.1.11"
   }

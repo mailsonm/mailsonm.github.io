@@ -11,4 +11,27 @@
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://mailsonm.github.io/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mailsonm.github.io/" />
   </url>
+  <url>
+    <loc>https://mailsonm.github.io/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mailsonm.github.io/blog/posts/odoo-19-tdd-best-practices.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mailsonm.github.io/blog/posts/automacoes-n8n-produtividade.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mailsonm.github.io/blog/posts/wordpress-aviso-de-copia-plugin.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

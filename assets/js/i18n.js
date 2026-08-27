@@ -19,6 +19,7 @@ export const translations = {
       projects: 'Projetos',
       services: 'Serviços',
       contact: 'Contato',
+      blog: 'Blog',
       theme_aria: 'Alternar tema claro/escuro',
       lang_aria: 'Selecionar idioma'
     },
@@ -78,6 +79,12 @@ export const translations = {
       s4_title: 'Automações n8n & Pipelines CI/CD',
       s4_desc: 'Criação de fluxos inteligentes de dados no n8n.io, scripts de automação CLI/PowerShell e pipelines no GitHub Actions.'
     },
+    blog_section: {
+      title: 'Artigos & Blog Técnico',
+      subtitle: 'Conteúdos práticos, arquitetura e engenharia de software',
+      btn_all: 'Ver todos os artigos no Blog',
+      read_time: 'min de leitura'
+    },
     contact: {
       title: 'Vamos Conversar?',
       subtitle: 'Disponível para consultorias, novos projetos e oportunidades',
@@ -116,6 +123,7 @@ export const translations = {
       projects: 'Projects',
       services: 'Services',
       contact: 'Contact',
+      blog: 'Blog',
       theme_aria: 'Toggle light/dark theme',
       lang_aria: 'Select language'
     },
@@ -175,6 +183,12 @@ export const translations = {
       s4_title: 'n8n Automations & CI/CD Pipelines',
       s4_desc: 'Intelligent data workflows in n8n.io, CLI/PowerShell automation scripts, and GitHub Actions pipelines.'
     },
+    blog_section: {
+      title: 'Technical Blog & Insights',
+      subtitle: 'Practical tutorials, software architecture, and engineering deep dives',
+      btn_all: 'View all blog articles',
+      read_time: 'min read'
+    },
     contact: {
       title: 'Let\'s Connect',
       subtitle: 'Available for consulting, new projects, and opportunities',
@@ -213,6 +227,7 @@ export const translations = {
       projects: 'Proyectos',
       services: 'Servicios',
       contact: 'Contacto',
+      blog: 'Blog',
       theme_aria: 'Alternar tema claro/escuro',
       lang_aria: 'Seleccionar idioma'
     },
@@ -271,6 +286,12 @@ export const translations = {
       s3_desc: 'Desarrollo de plugins profesionales de alto rendimiento conformes a estándares WordPress VIP y PSR-12.',
       s4_title: 'Automatizaciones n8n & Pipelines CI/CD',
       s4_desc: 'Flujos de datos inteligentes en n8n.io, scripts de automatización CLI/PowerShell y pipelines en GitHub Actions.'
+    },
+    blog_section: {
+      title: 'Blog Técnico & Artículos',
+      subtitle: 'Guías prácticas, arquitectura de software y desarrollo',
+      btn_all: 'Ver todos los artículos en el Blog',
+      read_time: 'min de lectura'
     },
     contact: {
       title: '¿Hablamos?',

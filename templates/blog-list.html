@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Security Hardening & Content Security Policy (CSP) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Primary SEO Metadata -->
+  <title>Blog Técnico | Mailson Maia Alves - Consultoria & Engenharia de Software</title>
+  <meta name="description" content="Artigos técnicos, tutoriais de engenharia de software, Odoo 19, Python, PHP 8.3, WordPress, automações n8n e TDD-First por Mailson Maia Alves.">
+  <meta name="author" content="Mailson Maia Alves">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mailsonm.github.io/blog/">
+  <link rel="alternate" type="application/rss+xml" title="Feed RSS de Mailson Maia Alves" href="https://mailsonm.github.io/feed.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mailsonm.github.io/blog/">
+  <meta property="og:title" content="Blog Técnico | Mailson Maia Alves">
+  <meta property="og:description" content="Artigos práticos de engenharia de software, Odoo 19 ERP, PHP 8.3, WordPress, Automações e TDD.">
+  <meta property="og:image" content="https://mailsonm.github.io/assets/img/profile-1.webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mailson Maia - Blog Técnico">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog Técnico | Mailson Maia Alves">
+  <meta name="twitter:description" content="Artigos práticos de engenharia de software, Odoo 19 ERP, PHP 8.3, WordPress, Automações e TDD.">
+  <meta name="twitter:image" content="https://mailsonm.github.io/assets/img/profile-1.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Técnico - Mailson Maia Alves",
+    "url": "https://mailsonm.github.io/blog/",
+    "description": "Artigos técnicos sobre Odoo 19, Python, PHP 8.3, WordPress, automações com n8n e TDD-First.",
+    "author": {
+      "@type": "Person",
+      "name": "Mailson Maia Alves",
+      "url": "https://mailsonm.github.io/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Header & Navigation -->
+  <header id="header" class="site-header">
+    <nav class="nav-container" aria-label="Navegação do Blog">
+      <a href="../index.html" class="brand-logo">Mailson Maia</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#about" class="nav-link">Sobre</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Especialidades</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projetos</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contato</a></li>
+        <li><a href="index.html" class="nav-link active">Blog</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <span class="icon-theme" aria-hidden="true">🌓</span>
+        </button>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="blog-main-container">
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Engenharia, Arquitetura & Código</span>
+        </div>
+        <h1 class="blog-main-title">Blog Técnico</h1>
+        <p class="blog-main-subtitle">
+          Artigos aprofundados sobre <strong>Odoo 19 ERP</strong>, <strong>Python</strong>, <strong>PHP 8.3/WordPress</strong>, <strong>Automações n8n</strong> e metodologia <strong>TDD-First (Akita Way)</strong>.
+        </p>
+        <div class="blog-hero-actions">
+          <a href="../feed.xml" target="_blank" rel="noopener noreferrer" class="btn-rss" title="Assinar Feed RSS">
+            <span class="rss-icon" aria-hidden="true">📡</span> Assinar RSS Feed
+          </a>
+          <a href="../index.html" class="btn-back-portfolio">
+            <span class="arrow-back" aria-hidden="true">←</span> Voltar ao Portfólio
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Search Toolbar -->
+    <section class="blog-toolbar-section">
+      <div class="container">
+        <div class="blog-toolbar">
+          <div class="blog-search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="blog-search-input" placeholder="Buscar por título, palavra-chave ou resumo..." aria-label="Buscar artigos do blog">
+          </div>
+          <div class="blog-tags-filter" id="blog-tags-filter" role="toolbar" aria-label="Filtrar artigos por tag">
+            <!-- TAGS_FILTER -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts-section">
+      <div class="container">
+        <div class="posts-grid" id="posts-grid">
+          <!-- POSTS_LIST -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p class="footer-copy">© 2026 <strong>Mailson Maia Alves</strong>. Todos os direitos reservados.</p>
+        <p class="footer-sub">Hospedado no GitHub Pages com alta performance e TDD-First.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/mailsonm" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/mailson-maia-alves-19a479208/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+        <a href="../feed.xml" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="RSS Feed">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Entrypoint for Blog List -->
+  <script type="module" src="../assets/js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mailson Maia Alves | Blog Técnico</title>
+    <link>https://mailsonm.github.io/blog/</link>
+    <description>Artigos técnicos sobre Odoo 19, PHP 8.3, WordPress, Automações n8n e TDD-First.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 27 Aug 2026 16:56:00 GMT</lastBuildDate>
+    <atom:link href="https://mailsonm.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[Desenvolvimento Orientado a Testes no Odoo 19]]></title>
+      <link>https://mailsonm.github.io/blog/posts/odoo-19-tdd-best-practices.html</link>
+      <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/odoo-19-tdd-best-practices.html</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <author><![CDATA[Mailson Maia Alves]]></author>
+      <description><![CDATA[Como implementar testes de integração no Odoo 19 utilizando TransactionCase e Pytest.]]></description>
+      <category><![CDATA[Odoo]]></category>
+      <category><![CDATA[Python]]></category>
+      <category><![CDATA[TDD]]></category>
+    </item>
+  </channel>
+</rss>

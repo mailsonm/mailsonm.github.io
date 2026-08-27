@@ -7,3 +7,4 @@ blob-report/
 .DS_Store
 Thumbs.db
 *.log
+tests/fixtures/
