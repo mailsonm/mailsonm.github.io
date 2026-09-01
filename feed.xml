@@ -5,56 +5,27 @@
     <link>https://mailsonm.github.io/blog/</link>
     <description>Artigos técnicos sobre Odoo 19, PHP 8.3, WordPress, Automações n8n e TDD-First.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 01 Sep 2026 19:18:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 19:58:33 GMT</lastBuildDate>
     <atom:link href="https://mailsonm.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title><![CDATA[Ainda Vale a Pena Usar WordPress em Época de IA? A Verdade Além do Hype]]></title>
-      <link>https://mailsonm.github.io/blog/posts/ainda-vale-a-pena-usar-wordpress-em-epoca-de-ia.html</link>
-      <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/ainda-vale-a-pena-usar-wordpress-em-epoca-de-ia.html</guid>
+      <title><![CDATA[Post com Imagem]]></title>
+      <link>https://mailsonm.github.io/blog/posts/post-com-imagem.html</link>
+      <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/post-com-imagem.html</guid>
       <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
       <author><![CDATA[Mailson Maia Alves]]></author>
-      <description><![CDATA[Uma análise técnica e de negócios sobre por que a IA não substitui o WordPress — e como combinar o poder dos agentes de código com a maturidade do maior CMS do mundo.]]></description>
-      <category><![CDATA[WordPress]]></category>
-      <category><![CDATA[Inteligência Artificial]]></category>
-      <category><![CDATA[Engenharia de Software]]></category>
-      <category><![CDATA[Negócios Digitais]]></category>
-      <category><![CDATA[SEO]]></category>
+      <description><![CDATA[]]></description>
+      
     </item>
     <item>
-      <title><![CDATA[Orquestração de Automações Corporativas com n8n e Webhooks]]></title>
-      <link>https://mailsonm.github.io/blog/posts/automacoes-n8n-produtividade.html</link>
-      <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/automacoes-n8n-produtividade.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
-      <author><![CDATA[Mailson Maia Alves]]></author>
-      <description><![CDATA[Boas práticas para criar fluxos de automação resilientes com n8n, webhooks assíncronos e tratamento de erros sem intervenção manual.]]></description>
-      <category><![CDATA[n8n]]></category>
-      <category><![CDATA[Automação]]></category>
-      <category><![CDATA[DevOps]]></category>
-      <category><![CDATA[APIs]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Arquitetura e Segurança no Desenvolvimento de Plugins WordPress]]></title>
-      <link>https://mailsonm.github.io/blog/posts/wordpress-aviso-de-copia-plugin.html</link>
-      <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/wordpress-aviso-de-copia-plugin.html</guid>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 GMT</pubDate>
-      <author><![CDATA[Mailson Maia Alves]]></author>
-      <description><![CDATA[Como desenvolvemos o plugin Aviso de Cópia seguindo os padrões WordPress VIP, PSR-12, sanitização estrita e proteção de conteúdo.]]></description>
-      <category><![CDATA[WordPress]]></category>
-      <category><![CDATA[PHP]]></category>
-      <category><![CDATA[Segurança]]></category>
-      <category><![CDATA[Open Source]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Desenvolvimento Orientado a Testes no Odoo 19 com TransactionCase]]></title>
+      <title><![CDATA[Desenvolvimento Orientado a Testes no Odoo 19]]></title>
       <link>https://mailsonm.github.io/blog/posts/odoo-19-tdd-best-practices.html</link>
       <guid isPermaLink="true">https://mailsonm.github.io/blog/posts/odoo-19-tdd-best-practices.html</guid>
       <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
       <author><![CDATA[Mailson Maia Alves]]></author>
-      <description><![CDATA[Guia avançado de como estruturar testes automatizados de integração no Odoo 19 utilizando TransactionCase, pytest e isolamento de banco no Windows e Docker.]]></description>
+      <description><![CDATA[Como implementar testes de integração no Odoo 19 utilizando TransactionCase e Pytest.]]></description>
       <category><![CDATA[Odoo]]></category>
       <category><![CDATA[Python]]></category>
       <category><![CDATA[TDD]]></category>
-      <category><![CDATA[ERP]]></category>
     </item>
   </channel>
 </rss>

@@ -9,6 +9,7 @@ tags:
   - DevOps
   - APIs
 lang: pt-BR
+image: /assets/img/posts/thumb-automacoes-n8n-webhooks.webp
 description: Boas práticas para criar fluxos de automação resilientes com n8n, webhooks assíncronos e tratamento de erros sem intervenção manual.
 published: true
 ---

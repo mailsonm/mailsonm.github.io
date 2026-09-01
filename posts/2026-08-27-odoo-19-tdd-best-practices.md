@@ -9,6 +9,7 @@ tags:
   - TDD
   - ERP
 lang: pt-BR
+image: /assets/img/posts/thumb-odoo-19-tdd.webp
 description: Guia avançado de como estruturar testes automatizados de integração no Odoo 19 utilizando TransactionCase, pytest e isolamento de banco no Windows e Docker.
 published: true
 ---

@@ -9,6 +9,7 @@ tags:
   - Segurança
   - Open Source
 lang: pt-BR
+image: /assets/img/posts/thumb-wordpress-seguranca-plugins.webp
 description: Como desenvolvemos o plugin Aviso de Cópia seguindo os padrões WordPress VIP, PSR-12, sanitização estrita e proteção de conteúdo.
 published: true
 ---

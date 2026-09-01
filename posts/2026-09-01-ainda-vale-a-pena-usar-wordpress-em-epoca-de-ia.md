@@ -10,6 +10,7 @@ tags:
   - Negócios Digitais
   - SEO
 lang: pt-BR
+image: /assets/img/posts/thumb-wordpress-ia-era.webp
 description: Uma análise técnica e de negócios sobre por que a IA não substitui o WordPress — e como combinar o poder dos agentes de código com a maturidade do maior CMS do mundo.
 published: true
 ---
