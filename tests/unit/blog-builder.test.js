@@ -63,6 +63,17 @@ Aqui está uma lista de boas práticas:
       expect(content).toContain('# Testes no Odoo 19');
     });
 
+    it('should extract image or thumbnail metadata if provided in frontmatter', () => {
+      const markdownWithImage = `---
+title: Post com Capa
+slug: post-com-capa
+image: /assets/img/posts/capa.webp
+---
+Conteúdo do artigo`;
+      const { data } = extractFrontmatter(markdownWithImage);
+      expect(data.image).toBe('/assets/img/posts/capa.webp');
+    });
+
     it('should handle markdown without frontmatter gracefully with default values', () => {
       const rawMarkdown = '# Simple Title\n\nJust some text without YAML.';
       const { data, content } = extractFrontmatter(rawMarkdown);
@@ -236,6 +247,44 @@ Aqui está uma lista de boas práticas:
       expect(postHtml).toContain('TestPartner');
       expect(postHtml).toContain('TransactionCase');
       expect(postHtml).toContain('hljs language-python');
+    });
+
+    it('should render featured image and card thumbnail when post has image in frontmatter', async () => {
+      const postWithImage = `---
+title: Post com Imagem
+slug: post-com-imagem
+image: /assets/img/posts/thumb-exemplo.webp
+date: '2026-09-01'
+published: true
+---
+Conteúdo do post com imagem.`;
+      fs.writeFileSync(path.join(postsDir, '2026-09-01-post-com-imagem.md'), postWithImage, 'utf-8');
+
+      fs.writeFileSync(
+        path.join(templatesDir, 'blog-post.html'),
+        '<html><head><meta property="og:image" content="<!-- POST_OG_IMAGE -->"></head><body><!-- POST_FEATURED_IMAGE --><h1><!-- POST_TITLE --></h1><article><!-- POST_CONTENT --></article></body></html>',
+        'utf-8'
+      );
+
+      const result = await buildBlog({
+        postsDir,
+        templatesDir,
+        outputDir,
+        siteUrl: 'https://mailsonm.github.io'
+      });
+
+      expect(result.postsCount).toBe(2);
+
+      // Check card thumbnail in list
+      const listHtml = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf-8');
+      expect(listHtml).toContain('blog-card-thumb');
+      expect(listHtml).toContain('thumb-exemplo.webp');
+
+      // Check featured image and og:image in post
+      const postHtml = fs.readFileSync(path.join(outputDir, 'posts', 'post-com-imagem.html'), 'utf-8');
+      expect(postHtml).toContain('article-featured-image');
+      expect(postHtml).toContain('thumb-exemplo.webp');
+      expect(postHtml).toContain('https://mailsonm.github.io/assets/img/posts/thumb-exemplo.webp');
     });
 
     afterAll(() => {

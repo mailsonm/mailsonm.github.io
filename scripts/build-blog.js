@@ -152,6 +152,35 @@ export function updateSitemapWithBlog(posts, existingSitemapXml) {
 }
 
 /**
+ * Resolves an image path for different rendering contexts (list, post, og).
+ * @param {string} imagePath 
+ * @param {'list' | 'post' | 'og'} [context='post'] 
+ * @param {string} [siteUrl='https://mailsonm.github.io'] 
+ * @returns {string}
+ */
+export function resolveImagePath(imagePath, context = 'post', siteUrl = 'https://mailsonm.github.io') {
+  if (!imagePath || typeof imagePath !== 'string') return '';
+  const trimmed = imagePath.trim();
+  if (!trimmed) return '';
+
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed;
+  }
+
+  const cleanPath = trimmed.replace(/^\/+/, '');
+
+  if (context === 'og') {
+    return `${siteUrl.replace(/\/+$/, '')}/${cleanPath}`;
+  }
+
+  if (context === 'list') {
+    return `../${cleanPath}`;
+  }
+
+  return `../../${cleanPath}`;
+}
+
+/**
  * Formats a date string to Portuguese readable format.
  * @param {string} dateString 
  * @returns {string}
@@ -215,6 +244,9 @@ export async function buildBlog(options = {}) {
     const readTime = calculateReadTime(content);
     const htmlContent = renderMarkdownToHtml(content);
 
+    const rawImage = data.image || data.thumbnail || data.cover || '';
+    const image = typeof rawImage === 'string' ? rawImage.trim() : '';
+
     const postObj = {
       title: data.title || 'Artigo sem título',
       slug,
@@ -224,6 +256,7 @@ export async function buildBlog(options = {}) {
       tags: Array.isArray(data.tags) ? data.tags : [],
       lang: data.lang || 'pt-BR',
       description: data.description || '',
+      image,
       readTime,
       htmlContent,
       url: `${siteUrl}/blog/posts/${slug}.html`,
@@ -254,6 +287,14 @@ export async function buildBlog(options = {}) {
       .map(t => `<span class="badge-tag" data-tag="${t.toLowerCase()}">${t}</span>`)
       .join(' ');
 
+    const ogImage = post.image
+      ? resolveImagePath(post.image, 'og', siteUrl)
+      : `${siteUrl}/assets/img/profile-1.webp`;
+
+    const featuredImageHtml = post.image
+      ? `<div class="article-featured-image"><img src="${resolveImagePath(post.image, 'post', siteUrl)}" alt="${post.title}" loading="eager" fetchpriority="high"></div>`
+      : '';
+
     let postHtml = postTemplate
       .replace(/<!-- POST_TITLE -->/g, post.title)
       .replace(/<!-- POST_DATE -->/g, post.date)
@@ -266,7 +307,9 @@ export async function buildBlog(options = {}) {
       .replace(/<!-- POST_CONTENT -->/g, post.htmlContent)
       .replace(/<!-- POST_LANG -->/g, post.lang)
       .replace(/<!-- SITE_URL -->/g, siteUrl)
-      .replace(/<!-- POST_URL -->/g, post.url);
+      .replace(/<!-- POST_URL -->/g, post.url)
+      .replace(/<!-- POST_OG_IMAGE -->/g, ogImage)
+      .replace(/<!-- POST_FEATURED_IMAGE -->/g, featuredImageHtml);
 
     fs.writeFileSync(path.join(postsOutputDir, `${post.slug}.html`), postHtml, 'utf-8');
   }
@@ -283,25 +326,34 @@ export async function buildBlog(options = {}) {
 
   const postsCardsHtml = posts.length === 0
     ? `<div class="empty-blog-state"><p>Nenhum artigo publicado no momento. Em breve novos conteúdos!</p></div>`
-    : posts.map(post => `
-      <article class="blog-card" data-tags="${post.tags.map(t => t.toLowerCase()).join(',')}">
-        <div class="blog-card-meta">
-          <time datetime="${post.date}">${post.formattedDate}</time>
-          <span class="meta-separator">•</span>
-          <span class="read-time">${post.readTime} min de leitura</span>
-        </div>
-        <h2 class="blog-card-title">
-          <a href="${post.relativeUrl}">${post.title}</a>
-        </h2>
-        <p class="blog-card-desc">${post.description}</p>
-        <div class="blog-card-footer">
-          <div class="blog-card-tags">
-            ${post.tags.map(t => `<span class="badge-tag">${t}</span>`).join('')}
+    : posts.map(post => {
+      const thumbHtml = post.image
+        ? `<div class="blog-card-thumb"><a href="${post.relativeUrl}" tabindex="-1" aria-hidden="true"><img src="${resolveImagePath(post.image, 'list', siteUrl)}" alt="${post.title}" loading="lazy"></a></div>`
+        : '';
+
+      return `
+      <article class="blog-card${post.image ? ' has-thumb' : ''}" data-tags="${post.tags.map(t => t.toLowerCase()).join(',')}">
+        ${thumbHtml}
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <time datetime="${post.date}">${post.formattedDate}</time>
+            <span class="meta-separator">•</span>
+            <span class="read-time">${post.readTime} min de leitura</span>
           </div>
-          <a href="${post.relativeUrl}" class="btn-read-more">Ler artigo <span class="arrow">→</span></a>
+          <h2 class="blog-card-title">
+            <a href="${post.relativeUrl}">${post.title}</a>
+          </h2>
+          <p class="blog-card-desc">${post.description}</p>
+          <div class="blog-card-footer">
+            <div class="blog-card-tags">
+              ${post.tags.map(t => `<span class="badge-tag">${t}</span>`).join('')}
+            </div>
+            <a href="${post.relativeUrl}" class="btn-read-more">Ler artigo <span class="arrow">→</span></a>
+          </div>
         </div>
       </article>
-    `.trim()).join('\n');
+    `.trim();
+    }).join('\n');
 
   let listHtml = listTemplate
     .replace(/<!-- POSTS_LIST -->/g, postsCardsHtml)
